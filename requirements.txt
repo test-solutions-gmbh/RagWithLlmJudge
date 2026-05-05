@@ -1,0 +1,7 @@
+python-dotenv==1.2.1
+langchain==1.2.7
+langchain-openai==1.1.7
+langchain-core==1.2.7
+langgraph==1.0.7
+numpy==2.4.4
+streamlit==1.50.0

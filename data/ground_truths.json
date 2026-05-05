@@ -1,0 +1,82 @@
+[
+  {
+    "id": "q1",
+    "category": "quantitative-fact",
+    "question": "How many days of paid vacation does 37signals offer each year, and what is the maximum number of vacation days you can bank through rollover?",
+    "expected_answer": "37signals offers **20 days** of vacation and personal days per year, plus **11 local holidays**.\n\nVacation time rolls over year to year, with a maximum bank of **27 days** at any time.",
+    "source_title": "Benefits & Perks",
+    "source_url": "https://basecamp.com/handbook/benefits-and-perks"
+  },
+  {
+    "id": "q2",
+    "category": "named-entity-lookup",
+    "question": "What is Queenbee at 37signals, and what can an employee do with it?",
+    "expected_answer": "**Queenbee** is 37signals' invoice, accounting, and identity system, hosted at billing.37signals.com.\n\nWith Queenbee, an employee can:\n- Look up any customer account\n- See whether the account is comped\n- Refund an invoice\n- Log in as a customer \u2014 but only with **explicit permission** from that customer",
+    "source_title": "Our Internal Systems",
+    "source_url": "https://basecamp.com/handbook/our-internal-systems"
+  },
+  {
+    "id": "q3",
+    "category": "comparative-policy",
+    "question": "How does paid leave entitlement at 37signals work for the primary caregiver of a new child? How does that compare to the secondary caregiver?",
+    "expected_answer": "- **Primary caregiver:** up to 16 weeks of leave at 100% pay.\n- **Secondary caregiver:** up to 6 weeks of leave at 100% pay.\n\nEither may choose to take additional unpaid leave. All parental leave must be taken within the first year of the child's birth or placement.",
+    "source_title": "Benefits & Perks",
+    "source_url": "https://basecamp.com/handbook/benefits-and-perks"
+  },
+  {
+    "id": "q4",
+    "category": "multi-part-policy",
+    "question": "How does 37signals match 401(k) contributions for US employees, and what does it do differently for employees outside the US?",
+    "expected_answer": "**For US employees:** 37signals' Vanguard plan matches 100% of what you contribute, up to 6% of your salary. You can enroll with your first paycheck.\n\n**For non-US employees:** 37signals will match what you contribute to a retirement account in your home country, also up to 6% of your salary. The match is paid directly via your monthly invoice; you are responsible for investing it and administering the account and its taxes.",
+    "source_title": "Benefits & Perks",
+    "source_url": "https://basecamp.com/handbook/benefits-and-perks"
+  },
+  {
+    "id": "q5",
+    "category": "multi-part-list",
+    "question": "List the four chief communication mechanisms 37signals uses to keep teams aligned in their async, remote work, and for each one explain how often it's required or when it's due.",
+    "expected_answer": "1. **Daily check-in** \u2014 answers \"What did you work on today?\". Asked every afternoon; required at least twice a week.\n2. **Weekly check-in** \u2014 answers \"What will you be working on this week?\". Asked every Monday morning; required every week.\n3. **Team Heartbeat** \u2014 a per-team summary of the previous cycle's completed work. Due the **first Friday of the cooldown period**.\n4. **Team Kickoff** \u2014 a per-team summary of work scheduled for the upcoming cycle. Due the **second Friday of the cooldown period**.",
+    "source_title": "How We Work",
+    "source_url": "https://basecamp.com/handbook/how-we-work"
+  },
+  {
+    "id": "q6",
+    "category": "conditional-policy",
+    "question": "If an employee has been at 37signals for 3 years and 6 months, and their employment is terminated (for cause), how many weeks of severance pay are they entitled to?",
+    "expected_answer": "**Zero weeks** of severance pay by default.\n\nEmployees terminated *for cause* — for example misconduct, violation of company policies, insubordination, or substance abuse while working — are **not eligible** for the standard severance package, regardless of tenure. The 3 years and 6 months of service is irrelevant here.\n\nThe only exception: management may, at its discretion, offer something anyway.",
+    "source_title": "Severance Packages",
+    "source_url": "https://basecamp.com/handbook/severance"
+  },
+  {
+    "id": "q7",
+    "category": "multi-step-deduction",
+    "question": "An employee is leaving 37signals after exactly 5 years and 6 months of employment. They were not terminated for cause. Calculate the total weeks of severance pay they're entitled to, and show the math.",
+    "expected_answer": "**Approximately 14 weeks** of severance pay.\n\nThe math:\n- Tenure exceeds 1 year, so the formula is the 4-week base plus 2 additional weeks per completed year of employment.\n- 4 + (2 \u00d7 5) = **14 weeks**.\n- The partial 6 months do not add another 2-week increment.\n- 14 weeks is below the 4-month maximum cap (~17 weeks).",
+    "source_title": "Severance Packages",
+    "source_url": "https://basecamp.com/handbook/severance"
+  },
+  {
+    "id": "q8",
+    "category": "multi-step-deduction",
+    "question": "An engineer has been at 37signals for 9 years and has never taken a sabbatical. How many sabbaticals has she earned, and if she resigns today, how many of them does 37signals actually pay her out for?",
+    "expected_answer": "She has earned **3 sabbaticals** \u2014 one every 3 years (at her 3-year, 6-year, and 9-year marks).\n\nHowever, 37signals only pays out unused sabbatical that was earned within the previous 12 months. So on resignation she'd be paid the monetary equivalent of just **1 sabbatical (6 weeks of pay)** \u2014 the most recent one, earned at year 9.\n\nThe two earlier unused sabbaticals (from years 3 and 6) are forfeited.",
+    "source_title": "Benefits & Perks",
+    "source_url": "https://basecamp.com/handbook/benefits-and-perks"
+  },
+  {
+    "id": "q9",
+    "category": "multi-step-deduction",
+    "question": "An employee joined 37signals 4 years and 7 months ago and has never resigned or been terminated. How many Employee Profit Sharing shares have they accrued by today?",
+    "expected_answer": "**31 shares accrued.**\n\nThe math:\n- Profit-sharing accrual begins on the employee's second anniversary, at a rate of 1 share per month.\n- This employee passed their 2-year anniversary 2 years and 7 months ago.\n- 2 years and 7 months = **31 months of accrual** = 31 shares.\n\n(Shares max out at the 10-year mark, so they're still well below the cap.)",
+    "source_title": "Benefits & Perks",
+    "source_url": "https://basecamp.com/handbook/benefits-and-perks"
+  },
+  {
+    "id": "q10",
+    "category": "multi-part-policy",
+    "question": "What are 37signals' summer hours, what date range do they cover, what happens when a holiday falls during this period, and how do newly hired employees become eligible?",
+    "expected_answer": "- **Date range:** May 1 through August 31 every year.\n- **Schedule:** a 4-day work week (32 hours instead of the usual 40).\n- **Holidays during this period:** the employee can take either the holiday off *or* their normal summer day off \u2014 but not both. Any additional days off that week count as vacation.\n- **New-hire eligibility:** a newly hired employee may need to complete a training program designated by their team lead before becoming eligible.",
+    "source_title": "Benefits & Perks",
+    "source_url": "https://basecamp.com/handbook/benefits-and-perks"
+  }
+]
