@@ -1,0 +1,917 @@
+SkyWay Airlines
+Customer Service Reference Manual
+Version 3.2 — Effective 1 March 2026
+
+This document is the authoritative reference for SkyWay Airlines customer service
+representatives and automated customer-facing systems. All policies described herein
+apply to flights operated by SkyWay Airlines (flight numbers SW0001–SW9999). Codeshare
+flights operated by partner airlines are governed by the operating carrier's policies
+unless explicitly stated otherwise.
+
+1. Booking and Reservations
+
+1.1. Fare Classes
+
+SkyWay Airlines offers four cabin classes, each with distinct service levels and
+flexibility:
+
+Economy Class
+  The standard cabin class available on all SkyWay routes. Economy fares are divided
+  into three sub-categories:
+  • Economy Light — the most restrictive fare. No checked baggage included. Seat
+    selection available for a fee. Non-refundable. Changes permitted up to 24 hours
+    before departure for a fee of EUR 75 per segment in addition to fare difference.
+  • Economy Standard — includes one checked bag (23 kg). Seat selection included in
+    rows 15 and above. Non-refundable, but a travel voucher may be issued for
+    cancellations made more than 48 hours before departure. Changes permitted for a
+    fee of EUR 50 per segment, in addition to fare difference.
+  • Economy Flex — includes one checked bag (23 kg). Free seat selection in all
+    economy rows. Fully refundable up to 24 hours before departure. Free changes
+    up to 3 hours before departure, subject to fare difference.
+
+Premium Economy Class
+  Available on medium-haul and long-haul routes (flights over 4 hours). Premium
+  Economy offers a wider seat (48 cm vs 44 cm in Economy), increased recline, and an
+  enhanced meal service. Includes one checked bag (23 kg) and priority boarding.
+  Seat selection is free. Changes permitted free of charge up to 24 hours before
+  departure, subject to fare difference. Refundable up to 48 hours before departure.
+
+Business Class
+  Available on all routes over 2 hours. Business Class provides a lie-flat seat on
+  long-haul routes (over 6 hours) and a recliner seat on medium-haul routes. Service
+  includes a multi-course meal, lounge access at departure, priority check-in, and
+  priority boarding. Includes two checked bags (32 kg each). Free seat selection.
+  Fully refundable. Free unlimited changes subject to fare difference.
+
+First Class
+  Available on select long-haul routes between hub airports (Frankfurt, Dubai, Tokyo
+  Narita, New York JFK, and Singapore Changi). First Class provides a private suite
+  with a closing door, a full-length lie-flat bed, and à la carte dining. Service
+  includes chauffeur transfer within 80 km of the departure or arrival airport,
+  exclusive lounge access, private check-in, and priority boarding. Includes three
+  checked bags (32 kg each). Fully refundable. Free unlimited changes including
+  date, route, and cabin class (upgrade only; downgrade refunds the difference).
+
+1.2. Booking Channels
+
+Passengers may book SkyWay Airlines flights through the following channels:
+
+• SkyWay website (www.skyway-airlines.example) — full fare selection, seat maps, and
+  ancillary services. Bookings receive an immediate e-ticket and confirmation email.
+• SkyWay mobile app (iOS and Android) — same functionality as the website with the
+  addition of mobile boarding passes and push notifications for flight status changes.
+• SkyWay Customer Service Centre — available by phone 24 hours a day, 7 days a week.
+  A service fee of EUR 25 per booking applies for phone reservations except for
+  passengers requiring special assistance (see Section 7).
+• Travel agencies and online travel agents (OTAs) — fares and conditions may vary.
+  Ancillary services purchased through third parties must be managed through that
+  third party. SkyWay cannot modify ancillary bookings made through external channels.
+• Airport ticket offices — available at all SkyWay hub airports during operating hours.
+  Walk-up fares may be higher than advance-purchase fares.
+
+1.3. Booking Confirmation and Ticketing
+
+Upon completing a booking, passengers receive a Booking Reference (also called a PNR —
+Passenger Name Record), which is a six-character alphanumeric code. This reference is
+required for all subsequent interactions including check-in, changes, and cancellations.
+
+E-tickets are issued automatically for bookings made through SkyWay direct channels
+(website, app, and Customer Service Centre). For bookings through travel agents, the
+agent is responsible for issuing the e-ticket within the ticketing time limit, which is
+typically 24 hours after booking but may vary depending on the fare rules.
+
+Failure to ticket within the time limit results in automatic cancellation of the
+booking without notification.
+
+1.4. Name Changes and Corrections
+
+SkyWay Airlines distinguishes between name corrections and name changes:
+
+• Name correction — fixing a minor spelling error (up to 3 characters) in the
+  passenger's name. Free of charge when requested at least 48 hours before departure.
+  Must be requested through the Customer Service Centre or at an airport ticket office.
+• Name change — transferring the booking to a different person. Not permitted on any
+  fare class. The existing booking must be cancelled (subject to cancellation rules of
+  the fare class) and a new booking made.
+
+The name on the booking must match the name on the travel document (passport or ID card)
+that will be presented at the airport. Minor discrepancies (e.g., middle name omitted,
+use of a nickname that appears on the passport) are accepted at the discretion of
+check-in staff but SkyWay cannot guarantee boarding if the names do not match.
+
+1.5. Infant and Child Policies
+
+Infants (under 2 years)
+  Infants who have not reached their second birthday on the date of the outbound flight
+  may travel on an adult's lap at a reduced fare (10% of the adult fare on domestic
+  and European routes; 10% of the adult fare plus applicable taxes on long-haul routes).
+  No baggage allowance is included for lap infants, but one collapsible stroller or car
+  seat may be checked free of charge. One infant per accompanying adult.
+
+  If a bassinet is required for long-haul flights, it must be requested at least 72
+  hours before departure through the Customer Service Centre. Bassinets are available
+  in bulkhead rows only and are subject to availability. Weight limit for bassinet use
+  is 11 kg.
+
+Children (2–11 years)
+  Children aged 2 to 11 must occupy their own seat and pay the applicable child fare,
+  which is typically the same as the adult fare for the selected cabin class. Children
+  under 5 must be accompanied by a passenger aged 16 or older. Children aged 5 to 11
+  may travel as unaccompanied minors (see Section 7.2).
+
+1.6. Group Bookings
+
+Groups of 10 or more passengers travelling on the same itinerary may request a group
+fare through the SkyWay Groups Desk (groups@skyway-airlines.example). Group bookings
+require a deposit of 10% of the total fare at the time of booking, with full payment
+due at least 30 days before departure. Passenger names may be added or changed up to
+14 days before departure at no extra charge, after which standard name correction rules
+apply. Group bookings are non-refundable, but date changes may be permitted subject to
+availability and a per-passenger administration fee of EUR 30.
+
+2. Check-in
+
+2.1. Online Check-in
+
+Online check-in is available through the SkyWay website and mobile app from 48 hours
+to 1 hour before the scheduled departure time. During online check-in, passengers can:
+
+• Confirm or change their seat assignment (subject to availability and fare rules)
+• Add checked baggage (if not included in the fare)
+• Request special meals (if not already requested — must be done at least 24 hours
+  before departure; requests made during online check-in cannot be guaranteed)
+• Download or email a boarding pass
+
+Online check-in is not available for:
+• Passengers requiring special assistance who have not pre-arranged their requirements
+• Passengers travelling with live animals in the cabin
+• Passengers on codeshare flights operated by partner airlines (check-in is handled
+  by the operating carrier)
+• Group bookings with more than 9 passengers
+
+2.2. Mobile Check-in
+
+Mobile check-in through the SkyWay app follows the same window as online check-in (48
+hours to 1 hour before departure). The app generates a mobile boarding pass with a QR
+code that can be scanned at security checkpoints and boarding gates. Mobile boarding
+passes are accepted at all SkyWay airports.
+
+Passengers using mobile boarding passes must still visit the baggage drop counter if
+they have checked baggage, unless they have used a self-service bag drop kiosk (available
+at Frankfurt, Munich, London Heathrow, Dubai, and Singapore Changi).
+
+2.3. Airport Check-in
+
+Airport check-in counters open 3 hours before departure for long-haul flights and 2
+hours before departure for short-haul and medium-haul flights. Check-in counters close:
+
+• 60 minutes before departure for long-haul flights
+• 45 minutes before departure for medium-haul flights
+• 40 minutes before departure for short-haul flights
+
+Passengers who arrive after the check-in deadline will be denied boarding and their
+seat may be released to standby passengers. No refund or rebooking is provided for
+missed check-in deadlines, regardless of the fare class.
+
+Business Class and First Class passengers have access to dedicated check-in counters
+with shorter queues. SkyWay Voyager Gold and Platinum members may also use the priority
+check-in counters regardless of cabin class.
+
+2.4. Seat Selection
+
+Seat selection policies vary by fare class:
+
+• Economy Light: seat selection available for a fee (EUR 8–25 depending on the route
+  and seat location). If no seat is selected, one will be assigned at check-in.
+• Economy Standard: free seat selection in rows 15 and above. Preferred seats (extra
+  legroom, exit rows) available for a fee of EUR 15–45.
+• Economy Flex: free seat selection in all economy rows including preferred seats.
+• Premium Economy: free seat selection in all Premium Economy rows.
+• Business Class: free seat selection in all Business Class rows.
+• First Class: free seat selection in all First Class suites.
+
+Seat assignments are subject to change for operational or safety reasons. SkyWay
+Airlines reserves the right to reassign seats at any time. If a passenger is
+involuntarily downgraded to a lower cabin class, compensation is provided in accordance
+with EU Regulation 261/2004: 30% of the ticket price for flights up to 1500 km, 50%
+for flights between 1500 and 3500 km, and 75% for flights over 3500 km.
+
+2.5. Travel Documents
+
+Passengers are responsible for ensuring they hold valid travel documents for their
+destination and any transit points. Required documents may include:
+
+• A valid passport (with at least 6 months validity beyond the date of return for
+  many destinations)
+• Visa or electronic travel authorization as required by the destination country
+• Health documentation (vaccination certificates, COVID-19 test results if still
+  required by the destination)
+• Transit visa if connecting through a country that requires one
+
+SkyWay Airlines may deny boarding if a passenger does not present valid travel documents.
+No refund is provided in such cases, regardless of the fare class.
+
+3. Baggage
+
+3.1. Carry-on Baggage
+
+All passengers are permitted the following carry-on baggage:
+
+• One cabin bag with maximum dimensions of 55 × 40 × 23 cm and maximum weight of
+  8 kg. This bag must fit in the overhead compartment.
+• One personal item (handbag, laptop bag, or small backpack) with maximum dimensions
+  of 40 × 30 × 15 cm. This item must fit under the seat in front of the passenger.
+
+Business Class and First Class passengers are permitted two cabin bags (each within the
+dimensions above) plus one personal item.
+
+Cabin baggage is checked at the gate. Bags exceeding the size or weight limit will be
+moved to the cargo hold and a checked baggage fee may be applied if no checked baggage
+allowance remains.
+
+3.2. Checked Baggage Allowance
+
+Checked baggage allowances vary by fare class and route:
+
+Economy Light:
+  • Short-haul and medium-haul (under 6 hours): no checked baggage included.
+  • Long-haul (6 hours or more): one checked bag (23 kg) included.
+  • Additional bags may be purchased: EUR 25 for the first bag (if not included),
+    EUR 45 for the second bag, EUR 80 for each additional bag.
+
+Economy Standard:
+  • All routes: one checked bag (23 kg) included.
+  • Additional bags: EUR 45 for the second bag, EUR 80 for each additional bag.
+
+Economy Flex:
+  • All routes: one checked bag (23 kg) included.
+  • Additional bags: EUR 45 for the second bag, EUR 80 for each additional bag.
+
+Premium Economy:
+  • All routes: one checked bag (23 kg) included.
+  • Additional bags: EUR 40 for the second bag, EUR 70 for each additional bag.
+
+Business Class:
+  • All routes: two checked bags (32 kg each) included.
+  • Additional bags: EUR 60 for each additional bag.
+
+First Class:
+  • All routes: three checked bags (32 kg each) included.
+  • Additional bags: EUR 60 for each additional bag.
+
+Maximum dimensions for all checked bags: 158 cm total (length + width + height).
+No single checked bag may exceed 32 kg regardless of fare class. Bags exceeding 23 kg
+but not exceeding 32 kg incur a heavy bag surcharge of EUR 50 per bag (except for
+Business and First Class, where the 32 kg allowance is standard).
+
+Pre-purchasing additional checked bags online is cheaper than purchasing at the airport.
+Online prices are approximately 30% lower than airport prices.
+
+3.3. Excess and Oversize Baggage
+
+Bags exceeding the maximum dimensions of 158 cm total (length + width + height) are
+classified as oversize baggage and incur a surcharge of EUR 100 per item per direction of travel,
+in addition to any applicable checked baggage fees. Oversize bags must be checked in at
+the oversized baggage counter (where available) or at the regular check-in counter.
+
+Bags exceeding 32 kg cannot be checked as passenger baggage and must be shipped as
+cargo through SkyWay Cargo (cargo@skyway-airlines.example).
+
+3.4. Special Items
+
+The following items require advance notice and may incur additional fees:
+
+Sports equipment:
+  • Bicycles: EUR 60 per direction. Must be partially disassembled (handlebars turned,
+    pedals removed) and packed in a bicycle box or padded bag. Maximum weight 32 kg.
+  • Skis and snowboards: EUR 40 per direction. Must be in a ski bag. Counts as one
+    piece of checked baggage if within the weight allowance.
+  • Golf equipment: EUR 40 per direction. Must be in a golf travel bag. Counts as one
+    piece of checked baggage if within the weight allowance.
+  • Surfboards: EUR 80 per direction. Maximum length 300 cm.
+  • Diving equipment: accepted as regular checked baggage if within dimensions and
+    weight limits. Tanks must be empty and valves open.
+
+Musical instruments:
+  • Small instruments (violin, guitar, etc.) may be carried in the cabin if they fit
+    in the overhead compartment or if an extra seat is purchased. Maximum dimensions
+    for overhead storage: 130 × 45 × 25 cm.
+  • Large instruments (cello, etc.) require the purchase of an additional seat. The
+    instrument must be secured with the seat belt and must not exceed 75 kg.
+  • Very large instruments (double bass, harp, etc.) must be shipped as cargo.
+
+Mobility aids:
+  • Wheelchairs and mobility scooters are transported free of charge in addition to
+    the regular baggage allowance. Battery-powered mobility aids must have the battery
+    disconnected and terminals protected. Lithium-ion batteries must not exceed 300 Wh.
+    Batteries exceeding 160 Wh but not exceeding 300 Wh require airline approval at
+    least 48 hours before departure.
+  • Walking aids (canes, crutches, walkers) are transported free of charge and do not
+    count towards the baggage allowance.
+
+3.5. Prohibited Items
+
+The following items are prohibited in both carry-on and checked baggage:
+  • Explosives and incendiary substances
+  • Compressed gases (except small personal aerosol cans in checked baggage, max 500 ml)
+  • Flammable liquids (except personal care items in containers of 100 ml or less in
+    carry-on, or up to 500 ml per container in checked baggage)
+  • Radioactive materials
+  • Corrosives
+  • Poisons and infectious substances
+
+The following items are prohibited in carry-on baggage but permitted in checked baggage:
+  • Knives with blades over 6 cm
+  • Scissors with blades over 6 cm
+  • Tools over 6 cm in length (screwdrivers, wrenches, etc.)
+  • Sports equipment that could be used as a weapon (baseball bats, hockey sticks, etc.)
+
+Lithium batteries:
+  • Spare lithium batteries must be carried in carry-on baggage only (not checked).
+  • Maximum 2 spare batteries per passenger, each not exceeding 160 Wh.
+  • Batteries must be individually protected against short circuit.
+  • Devices containing lithium batteries (laptops, phones, etc.) are permitted in both
+    carry-on and checked baggage.
+
+3.6. Lost, Delayed, and Damaged Baggage
+
+If checked baggage does not arrive on the carousel at the destination:
+
+1. The passenger must report the missing baggage immediately at the SkyWay Baggage
+   Service desk in the arrivals hall before leaving the airport. A Property Irregularity
+   Report (PIR) will be created and the passenger will receive a reference number.
+2. SkyWay Airlines will make reasonable efforts to locate and deliver the baggage
+   within 24 hours for domestic flights and within 48 hours for international flights.
+3. If the baggage has not been found within 5 days, the passenger should submit a
+   formal claim through the SkyWay website or Customer Service Centre.
+4. If the baggage is declared lost (not found within 21 days of the PIR), SkyWay
+   Airlines will compensate the passenger up to the limit specified by the Montreal
+   Convention (currently 1,288 SDR, approximately EUR 1,600). Compensation is based on
+   the depreciated value of the contents, not the replacement cost. Passengers are
+   encouraged to keep receipts for valuable items.
+5. For delayed baggage, SkyWay Airlines will reimburse reasonable expenses for
+   essential items (toiletries, basic clothing) up to EUR 100 per day for a maximum of
+   3 days, upon presentation of receipts.
+
+Damaged baggage:
+  Damage to checked baggage must be reported at the Baggage Service desk before leaving
+  the airport. If damage is discovered after leaving, it must be reported in writing
+  within 7 days of receipt of the baggage. Claims submitted after 7 days will not be
+  accepted. SkyWay Airlines will repair or replace damaged baggage up to the Montreal
+  Convention limit. Normal wear and tear (scuffs, scratches, dents from handling) is
+  not covered.
+
+Important deadlines:
+  • Damaged baggage: report within 7 days of receiving the baggage.
+  • Delayed baggage: submit a formal claim within 21 days of the baggage being
+    made available to the passenger.
+  • All claims must include the PIR reference number, boarding pass, baggage tag
+    receipt, and photographic evidence of damage (for damage claims).
+
+4. Flight Changes and Cancellations
+
+4.1. Voluntary Changes by the Passenger
+
+Passengers may change the date, time, or route of their booking subject to the rules of
+their fare class:
+
+Economy Light:
+  • Changes permitted up to 24 hours before the original departure time.
+  • Change fee: EUR 75 per passenger per segment plus any fare difference.
+  • Changes within 24 hours of departure: not permitted. The fare is forfeited.
+
+Economy Standard:
+  • Changes permitted up to 24 hours before the original departure time.
+  • Change fee: EUR 50 per passenger per segment plus any fare difference.
+  • Changes within 24 hours of departure: EUR 100 per segment plus fare difference.
+
+Economy Flex:
+  • Free changes up to 3 hours before departure, subject to fare difference.
+  • Changes within 3 hours of departure: EUR 50 per segment plus fare difference.
+
+Premium Economy:
+  • Free changes up to 24 hours before departure, subject to fare difference.
+  • Changes within 24 hours: EUR 50 per segment plus fare difference.
+
+Business Class:
+  • Free unlimited changes subject to fare difference only.
+  • Changes permitted up to 1 hour before departure.
+
+First Class:
+  • Free unlimited changes including date, route, and cabin class (upgrade only).
+  • Downgrade: fare difference is refunded.
+  • Changes permitted up to 1 hour before departure.
+
+All changes are subject to seat availability on the new flight. If no seats are
+available in the original fare class, the passenger may be offered a higher fare class
+at the applicable fare difference or may choose an alternative date or route.
+
+4.2. Voluntary Cancellation by the Passenger
+
+Cancellation and refund rules depend on the fare class:
+
+Economy Light:
+  • Non-refundable. No refund is provided for cancellations.
+  • Airport taxes and government-imposed fees are refundable upon request.
+
+Economy Standard:
+  • Non-refundable as cash. A travel voucher for the fare value (excluding taxes) is
+    issued for cancellations made more than 48 hours before departure. The voucher is
+    valid for 12 months from the date of issue and may be used for any SkyWay booking.
+  • Cancellations within 48 hours of departure: no voucher is issued. Airport taxes
+    and government-imposed fees are refundable upon request.
+
+Economy Flex:
+  • Fully refundable up to 24 hours before departure. Refund is processed to the
+    original payment method within 7 business days.
+  • Cancellations within 24 hours of departure: a travel voucher is issued for the
+    fare value.
+
+Premium Economy:
+  • Fully refundable up to 48 hours before departure.
+  • Cancellations within 48 hours: a travel voucher is issued for the fare value.
+
+Business Class:
+  • Fully refundable at any time before departure.
+  • Refund is processed within 7 business days to the original payment method.
+
+First Class:
+  • Fully refundable at any time before departure.
+  • Refund is processed within 3 business days to the original payment method.
+
+For all fare classes, a no-show (failing to check in or board the flight without prior
+cancellation) results in forfeiture of the entire fare. No refund, voucher, or rebooking
+is provided for no-shows, regardless of fare class. If the booking includes a return or
+onward segment, all subsequent segments are automatically cancelled upon a no-show on
+any segment.
+
+4.3. Cancellation by SkyWay Airlines
+
+When SkyWay Airlines cancels a flight, passengers are entitled to one of the following,
+at their choice:
+
+1. Rebooking on the next available SkyWay flight to the same destination at no extra
+   cost, in the same cabin class. If no SkyWay flight is available within 24 hours,
+   SkyWay will rebook the passenger on a partner airline or competing carrier.
+2. A full refund of the unused portion of the ticket, processed within 7 business days.
+3. Rebooking to a later date of the passenger's choice, subject to availability and at
+   no extra cost.
+
+In addition, if the cancellation is notified less than 14 days before the scheduled
+departure, passengers may be entitled to compensation under EU Regulation 261/2004 (see
+Section 5.2).
+
+4.4. Schedule Changes
+
+SkyWay Airlines may change the scheduled departure time of a flight for operational
+reasons. Passengers will be notified of schedule changes by email and/or SMS using the
+contact details provided at the time of booking.
+
+• Changes of less than 2 hours: no additional entitlement.
+• Changes of 2 hours or more: the passenger may accept the new time, rebook free of
+  charge on an alternative SkyWay flight, or cancel for a full refund.
+
+4.5. Connecting Flights and Missed Connections
+
+For passengers booked on connecting flights on a single ticket (a single booking
+reference covering all segments):
+
+• If a passenger misses a connection due to a delay or cancellation of the first
+  SkyWay flight, SkyWay Airlines will rebook the passenger on the next available
+  connection at no extra cost and provide care and assistance as required (see
+  Section 5.3).
+• The passenger's checked baggage will be automatically re-tagged and transferred to
+  the new connecting flight.
+• If the delay results in an overnight wait, SkyWay will provide hotel accommodation
+  and transport to and from the hotel.
+
+For passengers who have booked separate tickets for connecting flights (two or more
+independent booking references):
+
+• SkyWay Airlines is not responsible for missed connections. Each booking is treated
+  independently. If the first flight is delayed causing the passenger to miss the
+  second flight, no rebooking, compensation, or care is provided for the second
+  booking.
+• Passengers are strongly advised to allow sufficient connection time when booking
+  separate tickets. SkyWay recommends a minimum of 3 hours between separately booked
+  flights.
+
+5. Delays and Disruptions
+
+5.1. Definition of Delay
+
+A flight is considered delayed when it departs later than the scheduled departure time
+shown on the booking confirmation. Delays are categorized as follows for the purpose of
+passenger entitlements:
+
+• Short delay: less than 2 hours.
+• Moderate delay: 2 hours or more but less than 3 hours.
+• Long delay: 3 hours or more but less than 5 hours.
+• Extended delay: 5 hours or more.
+
+5.2. Compensation for Delays and Cancellations (EU Regulation 261/2004)
+
+Passengers departing from an EU/EEA airport, or arriving at an EU/EEA airport on a
+SkyWay flight, are entitled to compensation under EU Regulation 261/2004 when the
+flight arrives at the final destination with a delay of 3 hours or more, unless the
+delay is caused by extraordinary circumstances.
+
+Compensation amounts:
+  • EUR 250 for flights up to 1,500 km.
+  • EUR 400 for flights between 1,500 km and 3,500 km.
+  • EUR 600 for flights over 3,500 km.
+
+The compensation may be reduced by 50% if SkyWay Airlines offers rebooking on an
+alternative flight that arrives at the final destination within:
+  • 2 hours of the original scheduled arrival for flights up to 1,500 km.
+  • 3 hours of the original scheduled arrival for flights between 1,500 and 3,500 km.
+  • 4 hours of the original scheduled arrival for flights over 3,500 km.
+
+Extraordinary circumstances that exempt SkyWay from compensation obligations include:
+  • Severe weather conditions (storms, fog, heavy snow, volcanic ash).
+  • Air traffic control restrictions or airport closures.
+  • Security threats or political instability.
+  • Hidden manufacturing defects not detectable through routine maintenance.
+  • Strikes by entities outside SkyWay's control (e.g., air traffic controllers,
+    airport staff). Note: strikes by SkyWay employees are not considered extraordinary
+    circumstances.
+
+5.3. Right to Care and Assistance
+
+Regardless of whether compensation is payable, passengers experiencing delays are
+entitled to care and assistance as follows:
+
+For delays of 2 hours or more (short-haul flights up to 1,500 km):
+  • Complimentary meals and refreshments in reasonable relation to the waiting time.
+  • Two free phone calls, emails, or faxes.
+
+For delays of 3 hours or more (medium-haul flights 1,500–3,500 km):
+  • Complimentary meals and refreshments.
+  • Two free phone calls, emails, or faxes.
+
+For delays of 4 hours or more (long-haul flights over 3,500 km):
+  • Complimentary meals and refreshments.
+  • Two free phone calls, emails, or faxes.
+
+For delays requiring an overnight stay (when the rescheduled departure is the next day
+or later):
+  • Hotel accommodation including transport between the airport and hotel.
+
+For delays of 5 hours or more:
+  • In addition to the above, the passenger may choose to abandon the journey and
+    receive a full refund of the unused portion of the ticket plus, if applicable, a
+    return flight to the original point of departure.
+
+Care and assistance is provided regardless of the cause of the delay, including
+extraordinary circumstances.
+
+SkyWay distributes care vouchers (meal vouchers, hotel vouchers) at the gate or
+customer service desk. If vouchers are not distributed and the passenger incurs
+expenses, SkyWay will reimburse reasonable costs upon submission of receipts within
+28 days of the disruption.
+
+5.4. Denied Boarding (Overbooking)
+
+SkyWay Airlines may overbook flights to compensate for expected no-shows. If more
+passengers hold confirmed reservations than there are seats available, SkyWay will
+first seek volunteers willing to give up their seats in exchange for compensation
+(which may include travel vouchers, upgrades on a future flight, or cash).
+
+If there are not enough volunteers, SkyWay may deny boarding to passengers
+involuntarily. In such cases, the denied passenger is entitled to:
+
+• Compensation under EU Regulation 261/2004 (see Section 5.2) — the full amount,
+  with no reduction.
+• Rebooking on the next available flight or a full refund.
+• Care and assistance as described in Section 5.3.
+
+Involuntary denied boarding is applied in the following priority order (passengers
+denied last have the highest priority to keep their seats):
+  1. Passengers who checked in last.
+  2. Passengers on the lowest fare class.
+  3. Passengers without frequent flyer status.
+  Passengers with reduced mobility, unaccompanied minors, and families with young
+  children are never involuntarily denied boarding.
+
+6. SkyWay Voyager Loyalty Program
+
+6.1. Program Overview
+
+SkyWay Voyager is the frequent flyer loyalty program of SkyWay Airlines. Membership is
+free and open to anyone aged 2 years or older. Members earn Voyager Miles on eligible
+SkyWay flights and partner services, which can be redeemed for flights, upgrades, and
+other rewards.
+
+6.2. Earning Voyager Miles
+
+Miles are earned based on the distance flown and the fare class:
+  • Economy Light: 0.5 miles per km flown.
+  • Economy Standard: 1.0 mile per km flown.
+  • Economy Flex: 1.25 miles per km flown.
+  • Premium Economy: 1.5 miles per km flown.
+  • Business Class: 2.0 miles per km flown.
+  • First Class: 3.0 miles per km flown.
+
+Status miles (used for tier qualification) are earned at the same rates. Partner
+airline flights earn between 0.25 and 2.0 miles per km depending on the partner and
+fare class.
+
+Non-flight earning opportunities:
+  • SkyWay Voyager credit card: 1 mile per EUR 1 spent on everyday purchases; 2 miles
+    per EUR 1 spent on SkyWay purchases.
+  • Partner hotels: 500 miles per eligible stay.
+  • Partner car rental: 500 miles per eligible rental.
+
+6.3. Tier Levels
+
+SkyWay Voyager has four tier levels, determined by status miles earned in a calendar
+year:
+
+Blue (base level):
+  • Default tier for all new members.
+  • Benefits: earn and redeem Voyager Miles, access to member-only fares.
+  • No minimum miles required.
+
+Silver (25,000 status miles or 30 eligible flight segments per calendar year):
+  • All Blue benefits, plus:
+  • Priority check-in and boarding.
+  • One additional checked bag (23 kg) on all SkyWay flights, regardless of fare class.
+  • Preferred seat selection free of charge in Economy.
+  • 25% bonus on base Voyager Miles earned.
+
+Gold (50,000 status miles or 60 eligible flight segments per calendar year):
+  • All Silver benefits, plus:
+  • SkyWay Lounge access when flying SkyWay (including Economy).
+  • Guaranteed economy seat reservation up to 48 hours before departure on sold-out
+    flights.
+  • Two additional checked bags (23 kg each) on all SkyWay flights.
+  • 50% bonus on base Voyager Miles earned.
+  • Complimentary upgrade to the next cabin class, subject to availability, confirmed
+    at check-in.
+  • Dedicated Gold hotline with priority wait times (target: under 2 minutes).
+
+Platinum (100,000 status miles or 120 eligible flight segments per calendar year):
+  • All Gold benefits, plus:
+  • Access to SkyWay First Class lounges when departing from a SkyWay hub airport.
+  • Guaranteed Business Class seat reservation up to 24 hours before departure on
+    sold-out flights.
+  • Three additional checked bags (32 kg each) on all SkyWay flights.
+  • 100% bonus on base Voyager Miles earned.
+  • Complimentary upgrade to the next cabin class, confirmed 72 hours before departure
+    (subject to availability).
+  • Personal SkyWay Voyager concierge for booking and travel assistance.
+  • Chauffeur airport transfer at hub airports when flying Business or First Class.
+
+Tier status is evaluated on 1 January of each year based on miles or segments earned in
+the previous calendar year. Status is valid for the full following calendar year plus a
+3-month grace period (through 31 March). If the required miles or segments are not
+earned in the evaluation year, the member is downgraded by one tier (not to base).
+
+6.4. Redeeming Voyager Miles
+
+Miles may be redeemed for:
+  • Award flights on SkyWay Airlines starting at 10,000 miles for a short-haul
+    Economy return flight. Award seat availability is limited and varies by route and
+    season.
+  • Cabin class upgrades: upgrade from Economy to Premium Economy from 15,000 miles
+    per segment; Economy to Business from 30,000 miles; Business to First from 25,000
+    miles. Subject to availability.
+  • Seat selection fees, excess baggage fees, and other ancillary services.
+  • Partner redemptions: hotel stays, car rentals, and retail gift cards.
+
+Miles expire 36 months after the month in which they were earned, unless the member
+has qualifying activity (a SkyWay flight or partner transaction) within that period.
+Any qualifying activity resets the expiry clock for all accumulated miles.
+
+6.5. Status Matching and Challenges
+
+SkyWay Voyager offers a one-time status match for members holding equivalent status
+with a competing airline's loyalty program. The matched status is granted for a 90-day
+trial period, during which the member must earn a specified number of miles to retain
+the status for the full year:
+  • Silver match: earn 6,000 status miles in 90 days.
+  • Gold match: earn 12,000 status miles in 90 days.
+  • Platinum match: earn 25,000 status miles in 90 days.
+
+If the challenge is not met, the member reverts to Blue tier at the end of the 90-day
+period. Status match requests must include proof of current status with the competing
+airline and can be submitted through the SkyWay website.
+
+7. Special Assistance
+
+7.1. Passengers with Reduced Mobility
+
+SkyWay Airlines provides assistance to passengers with reduced mobility at no additional
+charge. Services include:
+
+• Wheelchair assistance from the airport entrance to the aircraft seat and from the
+  aircraft seat to the arrivals area at the destination.
+• Assistance with boarding and deplaning, including the use of an aisle chair if
+  needed.
+• Transport of wheelchairs and mobility aids free of charge (see Section 3.4).
+• Seating in accessible rows with additional legroom where available.
+
+Passengers requiring assistance must notify SkyWay at least 48 hours before departure
+through the Customer Service Centre or at the time of booking. Requests made less than
+48 hours before departure will be accommodated on a best-effort basis.
+
+SkyWay staff are trained to assist passengers with reduced mobility, but are not
+permitted to provide medical assistance, administer medication, or assist with personal
+care (eating, using the lavatory). Passengers who require such assistance must travel
+with a personal care attendant.
+
+7.2. Unaccompanied Minors
+
+Children aged 5 to 11 may travel without an accompanying adult on SkyWay flights under
+the Unaccompanied Minor (UM) service. The service is mandatory for children in this
+age group and carries a fee of EUR 50 per direction for short-haul flights and EUR 100
+per direction for medium-haul and long-haul flights.
+
+Requirements:
+  • The UM service must be booked at least 48 hours before departure through the
+    Customer Service Centre (it cannot be booked online).
+  • A designated adult must bring the child to the airport check-in counter and remain
+    at the airport until the flight has departed.
+  • A designated adult must meet the child at the destination airport at the gate.
+  • Both the dropping-off and picking-up adults must present valid photo identification.
+  • The child will be accompanied by SkyWay ground staff and cabin crew throughout the
+    journey.
+  • Unaccompanied minors are not accepted on flights with connections requiring a
+    change of terminal.
+
+Children aged 12 to 17 may travel alone without the UM service but may optionally use
+it upon parental request at the same fee.
+
+7.3. Pregnant Passengers
+
+SkyWay Airlines accepts pregnant passengers under the following conditions:
+
+• Up to 28 weeks of pregnancy: no restrictions, no medical certificate required.
+• From 28 to 36 weeks (single pregnancy) or 28 to 32 weeks (multiple pregnancy): a
+  medical certificate confirming fitness to fly is required. The certificate must be
+  dated no more than 7 days before the date of travel.
+• After 36 weeks (single pregnancy) or after 32 weeks (multiple pregnancy): travel
+  is not permitted.
+
+Pregnant passengers are advised to choose an aisle seat for comfort and easy access to
+the lavatory. Seat belt extensions are available on request.
+
+7.4. Medical Equipment and Medication
+
+Passengers may carry essential medical equipment and medication in the cabin:
+
+• Medication: carried in carry-on baggage with no additional fee. Liquid medication
+  exceeding 100 ml is permitted in carry-on if accompanied by a medical certificate
+  or prescription. It must be declared at the security checkpoint.
+• CPAP machines: permitted in the cabin as a medical device, in addition to the
+  standard carry-on allowance. Must be battery-powered for in-flight use.
+• Portable oxygen concentrators (POCs): permitted on SkyWay flights if the device
+  is FAA-approved. The passenger must carry sufficient battery power for the flight
+  duration plus 3 hours. A medical certificate is required, submitted at least 72
+  hours before departure.
+• Injectable medication and needles: permitted in carry-on with a medical certificate.
+  Used needles must be stored in a sharps container.
+
+7.5. Service Animals
+
+Recognized service animals (guide dogs, hearing dogs, and psychiatric service dogs) are
+permitted in the cabin at no additional charge on all SkyWay flights. The service animal
+must:
+
+• Be trained by an accredited service animal organization.
+• Wear a harness or identifying vest.
+• Remain at the passenger's feet or on the passenger's lap (if small enough) for the
+  duration of the flight.
+• Not occupy a seat.
+
+Documentation required: a certificate of training from an accredited organization and
+a veterinary health certificate dated within 10 days of travel. Documentation must be
+presented at check-in.
+
+Emotional support animals are not accepted in the cabin and must travel as cargo if
+they meet the requirements for live animal transport through SkyWay Cargo.
+
+8. In-flight Services
+
+8.1. Meal Service
+
+Meal service varies by route and cabin class:
+
+Short-haul flights (under 3 hours):
+  • Economy: complimentary non-alcoholic beverages; snacks available for purchase
+    (buy-on-board menu starting at EUR 3).
+  • Premium Economy: complimentary non-alcoholic beverages and a light snack.
+  • Business Class: complimentary beverages (including alcohol) and a light meal.
+
+Medium-haul flights (3–6 hours):
+  • Economy: complimentary non-alcoholic beverages and a sandwich or snack box;
+    hot meals available for purchase (EUR 8–12).
+  • Premium Economy: complimentary beverages and a hot meal with a choice of two
+    options.
+  • Business Class: complimentary beverages and a two-course hot meal.
+
+Long-haul flights (over 6 hours):
+  • Economy: complimentary full meal service (one hot meal and one lighter meal or
+    snack for flights over 8 hours) and non-alcoholic beverages; alcoholic beverages
+    for purchase (EUR 5–8).
+  • Premium Economy: complimentary full meal service with choice of two entrées,
+    beverages including alcohol.
+  • Business Class: complimentary multi-course meal with choice of three entrées,
+    full bar service.
+  • First Class: complimentary à la carte dining with choice of five entrées, premium
+    champagne and wine, snack bar available throughout the flight.
+
+Special meals (vegetarian, vegan, halal, kosher, gluten-free, diabetic, low-sodium,
+child meal, and infant meal) must be requested at least 24 hours before departure
+through the website, app, or Customer Service Centre. Special meals cannot be guaranteed
+if requested less than 24 hours before departure.
+
+8.2. In-flight Entertainment
+
+All SkyWay aircraft are equipped with a personal in-flight entertainment (IFE) system
+on medium-haul and long-haul flights, featuring:
+  • Over 200 movies, including new releases and classics.
+  • Over 150 TV show episodes.
+  • Music channels, podcasts, and audiobooks.
+  • Games.
+  • Flight map and external camera views.
+
+On short-haul flights, entertainment is available via the SkyWay streaming app
+(passengers must download the app before departure and use their own device).
+
+Business Class and First Class passengers receive complimentary noise-cancelling
+headphones. Economy and Premium Economy passengers may bring their own headphones or
+purchase a SkyWay headset for EUR 3.
+
+8.3. Wi-Fi
+
+Wi-Fi is available on all SkyWay aircraft equipped with satellite connectivity
+(approximately 80% of the fleet as of March 2026). Wi-Fi packages are:
+
+  • Chat package (messaging apps only): EUR 5 for the full flight.
+  • Browse package (web browsing and email): EUR 12 for the full flight.
+  • Stream package (full streaming capability): EUR 20 for the full flight.
+
+SkyWay Voyager Gold and Platinum members receive complimentary Browse Wi-Fi on all
+flights. Business Class passengers receive complimentary Browse Wi-Fi; First Class
+passengers receive complimentary Stream Wi-Fi.
+
+Wi-Fi availability may be limited or unavailable during certain phases of flight or
+over certain geographic regions.
+
+9. Contact, Claims, and Feedback
+
+9.1. Customer Service Centre
+
+The SkyWay Airlines Customer Service Centre is available 24/7:
+
+  • Phone: +49 69 555 0100 (international), local-rate numbers available in 30
+    countries (see www.skyway-airlines.example/contact).
+  • Email: customer.service@skyway-airlines.example (response within 5 business days).
+  • Live chat: available through the SkyWay website and app from 06:00 to 22:00 CET.
+  • Social media: @SkyWayAirlines on Twitter/X and Facebook (response within 4 hours
+    during operating hours).
+
+SkyWay Voyager Gold members have access to a dedicated priority hotline with a target
+response time of under 2 minutes. Platinum members have access to a personal concierge
+reachable by phone and email.
+
+9.2. Complaints and Claims Process
+
+Passengers wishing to file a complaint or claim should follow this process:
+
+1. Submit the complaint through the SkyWay website (preferred) or by email to
+   claims@skyway-airlines.example.
+2. Include the booking reference (PNR), flight number, date of travel, and a
+   description of the issue.
+3. For baggage claims, include the PIR reference number, photos of damage, and
+   receipts for any items claimed.
+4. For delay or cancellation compensation claims under EU261, include boarding pass
+   and evidence of the delay (e.g., screenshot of flight status).
+
+Response times:
+  • Acknowledgment of receipt: within 48 hours.
+  • Substantive response: within 28 days. If a response cannot be provided within
+    28 days due to the complexity of the case, the passenger will be informed of the
+    expected timeline.
+
+If the passenger is not satisfied with SkyWay's response, they may escalate to:
+  • The national enforcement body in the country of departure (for EU261 claims).
+  • The SkyWay Customer Ombudsman (ombudsman@skyway-airlines.example), who provides
+    an independent review.
+  • An Alternative Dispute Resolution (ADR) body. SkyWay participates in the söp
+    (Schlichtungsstelle für den öffentlichen Personenverkehr) in Germany and equivalent
+    bodies in other EU member states.
+
+9.3. Refund Processing
+
+Refund processing times vary by payment method:
+  • Credit card: 7 business days (may take additional time to appear on the statement).
+  • Bank transfer: 14 business days.
+  • Travel voucher: issued immediately by email.
+
+Refunds for tickets purchased through travel agents or OTAs are processed through the
+original booking channel. The passenger should contact their agent or OTA for refund
+status.
+
+End of SkyWay Airlines Customer Service Reference Manual.

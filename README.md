@@ -2,12 +2,32 @@
 
 *Anupam Krishnamurthy*
 
-A live-demo harness that accompanies the LLM Judge Benchmarking talk. The demo features a UI where the following steps can be followed:
+A live-demo harness that accompanies the LLM Judge Benchmarking talk. The system under test is a RAG-based customer service chatbot for the fictional **SkyWay Airlines**, answering single-turn passenger questions from the [SkyWay Customer Service Reference Manual](data/skyway/customer-service-reference-manual.txt). The demo features a UI where the following steps can be followed:
 
-1. A RAG model's performance is evaluated against a set of ground-truth questions by a human evaluator.
+1. The RAG chatbot's performance is evaluated against a set of ground-truth questions by a human evaluator.
 2. The human evaluator's verdicts are then used to create a benchmark.
-3. A LLM judge is used to evaluate the performance of the RAG model against the benchmark.
+3. A LLM judge is used to evaluate the performance of the RAG chatbot against the benchmark.
 4. The performance of multiple LLM judge runs are compared to the benchmark.
+
+## Source code for past conference demos
+
+I have used this repository as the source for some of my demos in conferences. Here are tagged commits that correspond to these demos:
+- German Testing Day 2026: https://github.com/test-solutions-gmbh/RagWithLlmJudge/commit/c8535e627a66eb99d607077c9f7ab4d673752c19
+
+## Knowledge base
+
+The plain-text manual at `data/skyway/customer-service-reference-manual.txt` is the single source of truth. A build script regenerates the derived artifacts from it:
+
+```bash
+python scripts/build_manual.py
+```
+
+This produces:
+
+- `data/skyway/customer-service-reference-manual.html` — a browser-readable version with a table of contents.
+- `data/skyway/customer-service-reference-manual.json` — the RAG corpus, where every numbered subsection of the manual (e.g. *6.3. Tier Levels*) becomes its own retrieval chunk.
+
+Re-run the script whenever you edit the TXT manual.
 
 ## Setup
 
@@ -103,6 +123,8 @@ python -m src.cli promote-benchmark \
 ```
 
 This validates that every entry has a non-null human verdict, strips the `llm_judge` block, and writes `data/benchmarks/baseline/benchmark.json`. Pass `--force` to overwrite an existing benchmark with the same name.
+
+If the results file already contains LLM judge feedback (i.e. `run-judge` was executed on it), that feedback is saved as the benchmark's first judge run under `judge_runs/`, so the source run immediately shows up in the alignment comparison.
 
 ### Run a judge against a benchmark
 

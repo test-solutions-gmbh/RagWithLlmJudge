@@ -1,9 +1,11 @@
 import argparse
+import html
 import json
 import os
 import re
 import sys
 import tempfile
+from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
@@ -12,15 +14,18 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 import streamlit as st
+import streamlit.components.v1 as components
 from dotenv import find_dotenv, load_dotenv
 
 from src import benchmark as bench
+from src.rag import answer_question, build_rag_graph
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 RESULTS_ROOT = REPO_ROOT / "data" / "results"
 LOGO_PATH = REPO_ROOT / "assets" / "ts-logo-transparent.png"
 FAVICON_PATH = REPO_ROOT / "assets" / "ts-lean-transparent.png"
+KNOWLEDGE_BASE_HTML = REPO_ROOT / "data" / "skyway" / "customer-service-reference-manual.html"
 
 CI_BLUE_1 = "#5383C6"
 CI_GREEN_1 = "#C5E784"
@@ -32,8 +37,28 @@ CI_BLACK = "#000000"
 _CUSTOM_CSS = """
 <style>
 textarea { background-color: #E8E8E8 !important; }
+/* Larger body text in the main area (questions, responses, reference
+   answers) for readability on a projected screen. Titles, sidebar, and
+   captions keep their default sizes. */
+[data-testid="stMain"] [data-testid="stMarkdownContainer"] p,
+[data-testid="stMain"] [data-testid="stMarkdownContainer"] li {
+    font-size: 1.2rem;
+}
+/* The question being evaluated stands out slightly above body text. */
+[data-testid="stMain"] [data-testid="stMarkdownContainer"] p.question-text {
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+/* Retrieved context excerpts (st.text) match the answer body size. */
+[data-testid="stMain"] [data-testid="stText"] {
+    font-size: 1.2rem;
+}
 </style>
 """
+
+
+def _question_html(text: str) -> str:
+    return f'<p class="question-text">{html.escape(text)}</p>'
 
 
 def _parse_cli() -> argparse.Namespace:
@@ -131,6 +156,28 @@ def _verdict_badge(value: Optional[bool]) -> str:
     )
 
 
+def _retrieval_badge(complete: Optional[bool]) -> str:
+    """Badge for the deterministic retrieval check, styled like the
+    verdict badges."""
+    if complete is True:
+        return (
+            f'<span style="background:{CI_BLUE_1};color:#fff;'
+            "padding:2px 10px;border-radius:10px;font-size:0.85rem;"
+            'font-weight:600">All sources retrieved</span>'
+        )
+    if complete is False:
+        return (
+            f'<span style="background:{CI_RED};color:#fff;'
+            "padding:2px 10px;border-radius:10px;font-size:0.85rem;"
+            'font-weight:600">Sources missing</span>'
+        )
+    return (
+        f'<span style="background:{CI_GREY_DARK};color:#fff;'
+        "padding:2px 10px;border-radius:10px;font-size:0.85rem;"
+        'font-weight:600">Not checked</span>'
+    )
+
+
 _LATEX_TEXT_RE = re.compile(r"\\text\s*\{([^{}]*)\}")
 _LATEX_DELIM_RE = re.compile(r"\\[\(\)\[\]]")
 _LATEX_COMMAND_REPLACEMENTS = [
@@ -161,6 +208,111 @@ def _strip_latex(text: str) -> str:
     for pattern, replacement in _LATEX_COMMAND_REPLACEMENTS:
         text = pattern.sub(replacement, text)
     return text
+
+
+def _format_timestamp(value: Optional[str]) -> str:
+    """Render a benchmark timestamp slug (e.g. '2026-06-09T12-52-22Z')
+    as a human-readable UTC date time."""
+    if not value:
+        return "—"
+    try:
+        parsed = datetime.strptime(value, "%Y-%m-%dT%H-%M-%SZ")
+    except ValueError:
+        return value
+    return parsed.strftime("%d %b %Y, %H:%M:%S UTC")
+
+
+def _styled_table_html(headers: list, rows: list) -> str:
+    """Styled HTML table shared by the summary and benchmark pages.
+    st.dataframe draws on a canvas with a small fixed font, so a plain HTML
+    table is the only way to control typography here.
+
+    headers: (label, css_class) pairs; rows: lists of (text, css_class)
+    cells. Classes: 'num' centers, 'pos'/'neg'/'muted' apply the verdict
+    colors, 'strong' bolds."""
+    css = f"""
+    <style>
+    table.ci-table {{
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0.5rem 0 1rem 0;
+    }}
+    table.ci-table th {{
+        background: {CI_BLUE_1};
+        color: #fff;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-align: left;
+        padding: 0.6rem 0.9rem;
+    }}
+    table.ci-table th:first-child {{ border-radius: 10px 0 0 0; }}
+    table.ci-table th:last-child {{ border-radius: 0 10px 0 0; }}
+    table.ci-table td {{
+        font-size: 1.15rem;
+        padding: 0.55rem 0.9rem;
+        border-bottom: 1px solid #E3E0DC;
+    }}
+    table.ci-table tbody tr:nth-child(even) {{ background: #F4F2EF; }}
+    table.ci-table th.num, table.ci-table td.num {{ text-align: center; }}
+    table.ci-table td.pos {{ color: {CI_BLUE_1}; font-weight: 700; }}
+    table.ci-table td.neg {{ color: {CI_RED}; font-weight: 700; }}
+    table.ci-table td.muted {{ color: {CI_GREY_DARK}; font-weight: 600; }}
+    table.ci-table td.strong {{ font-weight: 700; }}
+    </style>
+    """
+    head = "".join(
+        f'<th class="{cls}">{html.escape(label)}</th>' for label, cls in headers
+    )
+    body = "".join(
+        "<tr>"
+        + "".join(
+            f'<td class="{cls}">{html.escape(str(text))}</td>'
+            for text, cls in row
+        )
+        + "</tr>"
+        for row in rows
+    )
+    return (
+        css
+        + f'<table class="ci-table"><thead><tr>{head}</tr></thead>'
+        + f"<tbody>{body}</tbody></table>"
+    )
+
+
+def _verdict_cell_class(value: Optional[bool]) -> str:
+    if value is True:
+        return "pos"
+    if value is False:
+        return "neg"
+    return "muted"
+
+
+def _judge_runs_table_html(summaries: list) -> str:
+    headers = [
+        ("Judge model", ""),
+        ("Created", ""),
+        ("Agree", "num"),
+        ("Disagree", "num"),
+        ("Pending", "num"),
+        ("Alignment", "num"),
+    ]
+    rows = []
+    for run, summary in summaries:
+        rows.append(
+            [
+                (run["judge_model"], ""),
+                (_format_timestamp(run.get("created_at")), ""),
+                (summary["agree"], "num pos"),
+                (summary["disagree"], "num neg"),
+                (summary["pending"], "num muted"),
+                (f"{summary['alignment_pct']:.1f}%", "num strong"),
+            ]
+        )
+    return _styled_table_html(headers, rows)
+
+
+def _criteria_bullets(entry: dict) -> str:
+    return "\n".join(f"{_md_safe(c)}" for c in entry["evaluation_criteria"])
 
 
 def _md_safe(text: Optional[str]) -> str:
@@ -212,10 +364,93 @@ def _render_sidebar(payload: dict, results_path: Path) -> str:
         )
 
         st.divider()
-        view = st.radio("View", ["Questions", "Summary", "Benchmark"], index=0)
+        view = st.radio(
+            "View",
+            ["Knowledge Base", "Preview", "Questions", "Summary", "Benchmark"],
+            index=2,
+        )
         if st.button("Reload from disk"):
             st.rerun()
     return view
+
+
+@st.cache_resource(show_spinner="Loading the SkyWay knowledge base…")
+def _get_rag_graph():
+    """Build (once per session) the same RAG graph the CLI uses, so the
+    Preview view exercises the exact system under test."""
+    key = (os.getenv("OPENROUTER_API_KEY") or "").strip()
+    if not key or key.startswith("<") or key.endswith(">"):
+        return None
+    source = os.getenv(
+        "KNOWLEDGE_BASE_SOURCE", "data/skyway/customer-service-reference-manual.json"
+    )
+    if not os.path.isabs(source):
+        source = str(REPO_ROOT / source)
+    return build_rag_graph(
+        source,
+        llm_model=os.getenv("RAG_MODEL") or "openai/gpt-oss-120b:free",
+        embedding_model=os.getenv("EMBEDDING_MODEL") or "openai/text-embedding-3-small",
+        openrouter_api_key=key,
+    )
+
+
+def _render_knowledge_base() -> None:
+    if not KNOWLEDGE_BASE_HTML.exists():
+        st.error(
+            f"Knowledge base HTML not found at "
+            f"`{KNOWLEDGE_BASE_HTML.relative_to(REPO_ROOT)}`. "
+            "Run `python scripts/build_manual.py` first."
+        )
+        return
+    html_content = KNOWLEDGE_BASE_HTML.read_text(encoding="utf-8")
+    components.html(html_content, height=800, scrolling=True)
+
+
+def _render_preview() -> None:
+    st.markdown("### Preview: ask the SkyWay chatbot")
+    st.markdown(
+        "Ask the SkyWay Airlines customer service chatbot a question and see "
+        "its response — the same RAG system whose answers you will evaluate next."
+    )
+
+    graph = _get_rag_graph()
+    if graph is None:
+        st.error(
+            "Missing `OPENROUTER_API_KEY`. Set it in your `.env` file and "
+            "restart the app."
+        )
+        return
+
+    with st.form("preview_form", clear_on_submit=True):
+        question = st.text_input(
+            "Your question",
+            placeholder="e.g. How many bags can I check in Economy Standard?",
+        )
+        submitted = st.form_submit_button("Ask", use_container_width=True)
+
+    if submitted and question.strip():
+        with st.spinner("Thinking…"):
+            try:
+                out = answer_question(graph, question.strip())
+            except Exception as exc:  # surface API errors in the UI
+                st.error(f"The RAG system returned an error: {exc}")
+                return
+        # Only the most recent exchange is retained; older ones disappear.
+        st.session_state.preview_last = {
+            "question": question.strip(),
+            "answer": out["response"],
+            "retrieved_contexts": out["retrieved_contexts"],
+        }
+        st.rerun()
+
+    item = st.session_state.get("preview_last")
+    if item:
+        st.markdown(_question_html(item["question"]), unsafe_allow_html=True)
+        st.info(_md_safe(item["answer"]))
+        with st.expander("Retrieved contexts"):
+            for j, ctx in enumerate(item["retrieved_contexts"]):
+                st.markdown(f"**Context {j + 1}**")
+                st.text(ctx)
 
 
 def _render_question(payload: dict, results_path: Path) -> None:
@@ -245,13 +480,17 @@ def _render_question(payload: dict, results_path: Path) -> None:
             st.session_state.idx += 1
             st.rerun()
 
-    st.markdown(f"**{_md_safe(entry['question'])}**")
-    st.caption(f"Source: [{entry['source_title']}]({entry['source_url']})")
+    st.markdown(_question_html(entry["question"]), unsafe_allow_html=True)
 
     col_gt, col_rag = st.columns(2)
     with col_gt:
-        st.markdown("#### Expected answer")
-        st.success(_md_safe(entry["expected_answer"]))
+        st.markdown("#### Evaluation criteria")
+        st.success(_criteria_bullets(entry))
+        st.markdown("#### Expected sources")
+        source_lines = "  \n".join(
+            f"{s['id']} {s['title']}" for s in entry.get("sources", [])
+        )
+        st.success(source_lines)
     with col_rag:
         st.markdown("#### RAG response")
         st.info(_md_safe(entry["rag_response"]))
@@ -260,6 +499,31 @@ def _render_question(payload: dict, results_path: Path) -> None:
         for i, ctx in enumerate(entry.get("retrieved_contexts", [])):
             st.markdown(f"**Context {i + 1}**")
             st.text(ctx)
+
+    st.divider()
+    st.markdown("### Retrieval check")
+    check = entry.get("retrieval_check")
+    if check is None:
+        st.markdown(_retrieval_badge(None), unsafe_allow_html=True)
+        st.caption(
+            "Run `python -m src.cli check-retrieval` in a terminal, then click "
+            "**Reload from disk** in the sidebar."
+        )
+    else:
+        st.markdown(_retrieval_badge(check["complete"]), unsafe_allow_html=True)
+        if check["complete"]:
+            detail = (
+                f"All {len(entry.get('sources', []))} required source section(s) "
+                "were retrieved."
+            )
+        else:
+            miss = ", ".join(f"{m['id']} {m['title']}" for m in check["missing"])
+            detail = f"Missing required source(s): {miss}"
+        st.markdown(
+            f'<p style="font-size:1.2rem;margin-top:0.5rem">'
+            f"{html.escape(detail)}</p>",
+            unsafe_allow_html=True,
+        )
 
     st.divider()
     st.markdown("### Human verdict")
@@ -329,7 +593,11 @@ def _render_question(payload: dict, results_path: Path) -> None:
                 _verdict_badge(judge["acceptable_answer"]), unsafe_allow_html=True
             )
             if judge.get("reason"):
-                st.caption(_md_safe(judge["reason"]))
+                st.markdown(
+                    f'<p style="font-size:1.2rem;margin-top:0.5rem">'
+                    f"{html.escape(judge['reason'])}</p>",
+                    unsafe_allow_html=True,
+                )
 
         if judge["acceptable_answer"] is not None and human_val is not None:
             if judge["acceptable_answer"] == human_val:
@@ -349,21 +617,34 @@ def _render_summary(payload: dict) -> None:
         j = e["llm_judge"]["acceptable_answer"]
         if h is None or j is None:
             pending += 1
-            agreement = "—"
+            agreement, agreement_class = "—", "muted"
         elif h == j:
             agree += 1
-            agreement = "agree"
+            agreement, agreement_class = "agree", "pos"
         else:
             disagree += 1
-            agreement = "disagree"
+            agreement, agreement_class = "disagree", "neg"
+        check = e.get("retrieval_check")
+        n_required = len(e.get("sources", []))
+        if check is None or not n_required:
+            sources_cell, sources_class = "—", "num muted"
+        else:
+            n_found = n_required - len(check["missing"])
+            sources_cell = f"{n_found}/{n_required}"
+            sources_class = "num"
+            if check["missing"]:
+                missing_ids = ", ".join(m["id"] for m in check["missing"])
+                sources_cell += f" (missing {missing_ids})"
+                sources_class = "num neg"
         rows.append(
-            {
-                "Q": f"Q{i + 1}",
-                "Category": e.get("category") or "",
-                "Human": _verdict_icon(h),
-                "LLM judge": _verdict_icon(j),
-                "Agreement": agreement,
-            }
+            [
+                (f"Q{i + 1}", ""),
+                (e.get("category") or "", ""),
+                (sources_cell, sources_class),
+                (_verdict_icon(h), f"num {_verdict_cell_class(h)}"),
+                (_verdict_icon(j), f"num {_verdict_cell_class(j)}"),
+                (agreement, f"num {agreement_class}"),
+            ]
         )
 
     m1, m2, m3 = st.columns(3)
@@ -371,7 +652,15 @@ def _render_summary(payload: dict) -> None:
     m2.metric("Disagree", disagree)
     m3.metric("Pending", pending)
 
-    st.dataframe(rows, use_container_width=True, hide_index=True)
+    headers = [
+        ("Q", ""),
+        ("Category", ""),
+        ("Sources retrieved", "num"),
+        ("Human", "num"),
+        ("LLM judge", "num"),
+        ("Agreement", "num"),
+    ]
+    st.markdown(_styled_table_html(headers, rows), unsafe_allow_html=True)
 
     st.divider()
     st.markdown("#### Per-question detail")
@@ -379,7 +668,8 @@ def _render_summary(payload: dict) -> None:
         j = e["llm_judge"]
         h = e["human_eval"]
         with st.expander(f"Q{i + 1}: {e['question']}"):
-            st.markdown(f"**Expected:** {_md_safe(e['expected_answer'])}")
+            st.markdown("**Evaluation criteria:**")
+            st.markdown(_criteria_bullets(e))
             st.markdown(f"**RAG:** {_md_safe(e['rag_response'])}")
             st.markdown(
                 f"**Human:** {_verdict_badge(h['acceptable_answer'])} "
@@ -419,11 +709,10 @@ def _render_benchmark() -> None:
         st.error(str(exc))
         return
 
-    h1, h2, h3, h4 = st.columns(4)
+    h1, h2, h3 = st.columns(3)
     h1.metric("Entries", len(benchmark.get("entries", [])))
     h2.metric("RAG model", benchmark.get("rag_model") or "—")
-    h3.metric("Source run", benchmark.get("source_run_id") or "—")
-    h4.metric("Created", benchmark.get("created_at") or "—")
+    h3.metric("Created", _format_timestamp(benchmark.get("created_at")))
 
     judge_runs = bench.load_judge_runs(selected)
     if not judge_runs:
@@ -434,7 +723,10 @@ def _render_benchmark() -> None:
         )
         return
 
-    labels = [f"{r['judge_model']} · {r['created_at']}" for r in judge_runs]
+    labels = [
+        f"{r['judge_model']} · {_format_timestamp(r.get('created_at'))}"
+        for r in judge_runs
+    ]
     label_to_run = dict(zip(labels, judge_runs))
     chosen_labels = st.multiselect("Judge runs to compare", labels, default=labels)
     chosen_runs = [label_to_run[label] for label in chosen_labels]
@@ -444,19 +736,7 @@ def _render_benchmark() -> None:
 
     summaries = [(run, bench.compute_agreement(benchmark, run)) for run in chosen_runs]
 
-    rows = []
-    for run, summary in summaries:
-        rows.append(
-            {
-                "Judge model": run["judge_model"],
-                "Created": run["created_at"],
-                "Agree": summary["agree"],
-                "Disagree": summary["disagree"],
-                "Pending": summary["pending"],
-                "Alignment %": f"{summary['alignment_pct']:.1f}",
-            }
-        )
-    st.dataframe(rows, use_container_width=True, hide_index=True)
+    st.markdown(_judge_runs_table_html(summaries), unsafe_allow_html=True)
 
     st.divider()
     st.markdown("#### Per-question detail")
@@ -464,7 +744,8 @@ def _render_benchmark() -> None:
     for i, entry in enumerate(entries):
         h = entry["human_eval"]["acceptable_answer"]
         with st.expander(f"Q{i + 1}: {entry['question']}"):
-            st.markdown(f"**Expected:** {_md_safe(entry['expected_answer'])}")
+            st.markdown("**Evaluation criteria:**")
+            st.markdown(_criteria_bullets(entry))
             st.markdown(f"**RAG:** {_md_safe(entry['rag_response'])}")
             st.markdown(
                 f"**Human:** {_verdict_badge(h)} "
@@ -508,7 +789,11 @@ def main() -> None:
     st.title("LLM Judge Calibration")
 
     view = _render_sidebar(payload, results_path)
-    if view == "Questions":
+    if view == "Knowledge Base":
+        _render_knowledge_base()
+    elif view == "Preview":
+        _render_preview()
+    elif view == "Questions":
         _render_question(payload, results_path)
     elif view == "Summary":
         _render_summary(payload)

@@ -39,8 +39,8 @@ def _load_env() -> None:
         sys.exit("OPENROUTER_API_KEY is not set. Copy .env.example to .env and fill it in.")
 
 
-def _handbook_path() -> str:
-    path = os.getenv("HANDBOOK_SOURCE", "basecamp_handbook.json")
+def _knowledge_base_path() -> str:
+    path = os.getenv("KNOWLEDGE_BASE_SOURCE", "data/skyway/customer-service-reference-manual.json")
     if not os.path.isabs(path):
         path = str(REPO_ROOT / path)
     return path
@@ -60,7 +60,7 @@ def _latest_results_file() -> Path:
 
 def cmd_generate_rag(_args) -> None:
     _load_env()
-    handbook_path = _handbook_path()
+    knowledge_base_path = _knowledge_base_path()
     rag_model = os.getenv("RAG_MODEL") or DEFAULT_RAG_MODEL
     embedding_model = os.getenv("EMBEDDING_MODEL") or DEFAULT_EMBEDDING_MODEL
     openrouter_key = (os.getenv("OPENROUTER_API_KEY") or "").strip()
@@ -70,9 +70,9 @@ def cmd_generate_rag(_args) -> None:
     with open(GROUND_TRUTHS_PATH, "r", encoding="utf-8") as f:
         ground_truths = json.load(f)
 
-    print(f"Building RAG graph from {handbook_path} with {rag_model}...")
+    print(f"Building RAG graph from {knowledge_base_path} with {rag_model}...")
     graph = build_rag_graph(
-        handbook_path,
+        knowledge_base_path,
         llm_model=rag_model,
         embedding_model=embedding_model,
         openrouter_api_key=openrouter_key,
@@ -87,11 +87,11 @@ def cmd_generate_rag(_args) -> None:
             "id": gt["id"],
             "category": gt.get("category"),
             "question": question,
-            "expected_answer": gt["expected_answer"],
-            "source_title": gt["source_title"],
-            "source_url": gt["source_url"],
+            "evaluation_criteria": gt["evaluation_criteria"],
+            "sources": gt["sources"],
             "rag_response": out["response"],
             "retrieved_contexts": out["retrieved_contexts"],
+            "retrieved_sections": out["retrieved_sections"],
             "llm_judge": {"acceptable_answer": None, "reason": None},
             "human_eval": {"acceptable_answer": None, "comment": None},
         })
@@ -121,7 +121,7 @@ def cmd_run_judge(args) -> None:
     for entry in payload["entries"]:
         verdict = judge_response(
             question=entry["question"],
-            expected_answer=entry["expected_answer"],
+            evaluation_criteria=entry["evaluation_criteria"],
             response=entry["rag_response"],
             llm=llm,
         )
@@ -135,15 +135,61 @@ def cmd_run_judge(args) -> None:
     print(f"\nUpdated {results_path}")
 
 
+def cmd_check_retrieval(args) -> None:
+    """Deterministic retrieval check: did the RAG retriever fetch every
+    manual section the expected answer draws on? Pure metadata comparison
+    (section ids) — no LLM involved."""
+    results_path = Path(args.path) if args.path else _latest_results_file()
+    with open(results_path, "r", encoding="utf-8") as f:
+        payload = json.load(f)
+
+    entries = payload["entries"]
+    print(f"Checking source retrieval for {len(entries)} entries in {results_path}...")
+    required_total = retrieved_total = complete_count = 0
+    for entry in entries:
+        retrieved_ids = {s["id"] for s in entry.get("retrieved_sections", [])}
+        missing = [s for s in entry["sources"] if s["id"] not in retrieved_ids]
+        entry["retrieval_check"] = {
+            "complete": not missing,
+            "missing": [{"id": s["id"], "title": s["title"]} for s in missing],
+        }
+        n_required = len(entry["sources"])
+        required_total += n_required
+        retrieved_total += n_required - len(missing)
+        complete_count += not missing
+        if missing:
+            miss = ", ".join(f"{s['id']} {s['title']}" for s in missing)
+            print(f"  [{entry['id']}] MISS — {miss}")
+        else:
+            print(f"  [{entry['id']}] OK   — all {n_required} source(s) retrieved")
+
+    recall = (retrieved_total / required_total * 100.0) if required_total else 0.0
+    print(
+        f"\n{complete_count}/{len(entries)} questions with complete sources; "
+        f"source recall {retrieved_total}/{required_total} ({recall:.1f}%)"
+    )
+    atomic_write_json(results_path, payload)
+    print(f"Updated {results_path}")
+
+
 def cmd_promote_benchmark(args) -> None:
     results_path = Path(args.path).resolve()
     try:
-        target = bench.promote_from_results(
+        target, judge_run_path = bench.promote_from_results(
             results_path, args.name, force=args.force
         )
     except bench.BenchmarkError as exc:
         sys.exit(str(exc))
     print(f"Promoted {results_path} → {target}")
+    if judge_run_path is not None:
+        print(
+            f"Seeded judge run from the source run's LLM feedback → {judge_run_path}"
+        )
+    else:
+        print(
+            "Source run has no LLM judge feedback; run "
+            f"`judge-benchmark --name {args.name}` to add a judge run."
+        )
 
 
 def cmd_judge_benchmark(args) -> None:
@@ -163,7 +209,7 @@ def cmd_judge_benchmark(args) -> None:
     for entry in entries:
         verdict = judge_response(
             question=entry["question"],
-            expected_answer=entry["expected_answer"],
+            evaluation_criteria=entry["evaluation_criteria"],
             response=entry["rag_response"],
             llm=llm,
         )
@@ -231,6 +277,17 @@ def main(argv=None) -> None:
         help="Path to results.json to judge. Defaults to the most recent run in data/results/.",
     )
     p_judge.set_defaults(func=cmd_run_judge)
+
+    p_check = sub.add_parser(
+        "check-retrieval",
+        help="Deterministically verify that the required source sections were retrieved for each question.",
+    )
+    p_check.add_argument(
+        "--path",
+        default=None,
+        help="Path to results.json to check. Defaults to the most recent run in data/results/.",
+    )
+    p_check.set_defaults(func=cmd_check_retrieval)
 
     p_promote = sub.add_parser(
         "promote-benchmark",

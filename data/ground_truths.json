@@ -1,82 +1,209 @@
 [
   {
-    "id": "q1",
-    "category": "quantitative-fact",
-    "question": "How many days of paid vacation does 37signals offer each year, and what is the maximum number of vacation days you can bank through rollover?",
-    "expected_answer": "37signals offers **20 days** of vacation and personal days per year, plus **11 local holidays**.\n\nVacation time rolls over year to year, with a maximum bank of **27 days** at any time.",
-    "source_title": "Benefits & Perks",
-    "source_url": "https://basecamp.com/handbook/benefits-and-perks"
-  },
-  {
-    "id": "q2",
-    "category": "named-entity-lookup",
-    "question": "What is Queenbee at 37signals, and what can an employee do with it?",
-    "expected_answer": "**Queenbee** is 37signals' invoice, accounting, and identity system, hosted at billing.37signals.com.\n\nWith Queenbee, an employee can:\n- Look up any customer account\n- See whether the account is comped\n- Refund an invoice\n- Log in as a customer \u2014 but only with **explicit permission** from that customer",
-    "source_title": "Our Internal Systems",
-    "source_url": "https://basecamp.com/handbook/our-internal-systems"
-  },
-  {
-    "id": "q3",
-    "category": "comparative-policy",
-    "question": "How does paid leave entitlement at 37signals work for the primary caregiver of a new child? How does that compare to the secondary caregiver?",
-    "expected_answer": "- **Primary caregiver:** up to 16 weeks of leave at 100% pay.\n- **Secondary caregiver:** up to 6 weeks of leave at 100% pay.\n\nEither may choose to take additional unpaid leave. All parental leave must be taken within the first year of the child's birth or placement.",
-    "source_title": "Benefits & Perks",
-    "source_url": "https://basecamp.com/handbook/benefits-and-perks"
-  },
-  {
-    "id": "q4",
-    "category": "multi-part-policy",
-    "question": "How does 37signals match 401(k) contributions for US employees, and what does it do differently for employees outside the US?",
-    "expected_answer": "**For US employees:** 37signals' Vanguard plan matches 100% of what you contribute, up to 6% of your salary. You can enroll with your first paycheck.\n\n**For non-US employees:** 37signals will match what you contribute to a retirement account in your home country, also up to 6% of your salary. The match is paid directly via your monthly invoice; you are responsible for investing it and administering the account and its taxes.",
-    "source_title": "Benefits & Perks",
-    "source_url": "https://basecamp.com/handbook/benefits-and-perks"
-  },
-  {
-    "id": "q5",
-    "category": "multi-part-list",
-    "question": "List the four chief communication mechanisms 37signals uses to keep teams aligned in their async, remote work, and for each one explain how often it's required or when it's due.",
-    "expected_answer": "1. **Daily check-in** \u2014 answers \"What did you work on today?\". Asked every afternoon; required at least twice a week.\n2. **Weekly check-in** \u2014 answers \"What will you be working on this week?\". Asked every Monday morning; required every week.\n3. **Team Heartbeat** \u2014 a per-team summary of the previous cycle's completed work. Due the **first Friday of the cooldown period**.\n4. **Team Kickoff** \u2014 a per-team summary of work scheduled for the upcoming cycle. Due the **second Friday of the cooldown period**.",
-    "source_title": "How We Work",
-    "source_url": "https://basecamp.com/handbook/how-we-work"
-  },
-  {
-    "id": "q6",
+    "id": "AQ0001",
     "category": "conditional-policy",
-    "question": "If an employee has been at 37signals for 3 years and 6 months, and their employment is terminated (for cause), how many weeks of severance pay are they entitled to?",
-    "expected_answer": "**Zero weeks** of severance pay by default.\n\nEmployees terminated *for cause* — for example misconduct, violation of company policies, insubordination, or substance abuse while working — are **not eligible** for the standard severance package, regardless of tenure. The 3 years and 6 months of service is irrelevant here.\n\nThe only exception: management may, at its discretion, offer something anyway.",
-    "source_title": "Severance Packages",
-    "source_url": "https://basecamp.com/handbook/severance"
+    "question": "Can I change the date of travel for my first-class ticket, free of charge? What about difference in fare? What about availability?",
+    "evaluation_criteria": [
+      "1. First Class date changes are free of charge — no change fee applies",
+      "2. Any fare difference between the original ticket price and the new flight still applies",
+      "3. Changes are subject to seat availability on the new flight"
+    ],
+    "sources": [
+      {
+        "id": "4.1",
+        "title": "Voluntary Changes by the Passenger",
+        "url": "data/skyway/customer-service-reference-manual.html#section-4-1"
+      },
+      {
+        "id": "1.1",
+        "title": "Fare Classes",
+        "url": "data/skyway/customer-service-reference-manual.html#section-1-1"
+      }
+    ]
   },
   {
-    "id": "q7",
-    "category": "multi-step-deduction",
-    "question": "An employee is leaving 37signals after exactly 5 years and 6 months of employment. They were not terminated for cause. Calculate the total weeks of severance pay they're entitled to, and show the math.",
-    "expected_answer": "**Approximately 14 weeks** of severance pay.\n\nThe math:\n- Tenure exceeds 1 year, so the formula is the 4-week base plus 2 additional weeks per completed year of employment.\n- 4 + (2 \u00d7 5) = **14 weeks**.\n- The partial 6 months do not add another 2-week increment.\n- 14 weeks is below the 4-month maximum cap (~17 weeks).",
-    "source_title": "Severance Packages",
-    "source_url": "https://basecamp.com/handbook/severance"
+    "id": "AQ0002",
+    "category": "negative-test",
+    "question": "I made a mistake when I booked the ticket. I mistakenly entered my name as 'Ed' Norton instead of 'Sam' Norton.  As per your policy, this change is a name correction, with three characters or fewer, and should be possible free of charge. Correct?",
+    "evaluation_criteria": [
+      "1. Distinguishes between a name correction (fixing a minor spelling error of up to 3 characters within the same name) and a name change (transferring the booking to a different person)",
+      "2. E.g. Changing 'Ed Norton' to 'Sam Norton' is a name change — a completely different first name — not a minor spelling correction",
+      "3. Name changes are not permitted on any fare class",
+      "4. Advises the passenger to cancel the existing booking (subject to fare class cancellation rules) and make a new booking in the correct name"
+    ],
+    "sources": [
+      {
+        "id": "1.4",
+        "title": "Name Changes and Corrections",
+        "url": "data/skyway/customer-service-reference-manual.html#section-1-4"
+      }
+    ]
   },
   {
-    "id": "q8",
-    "category": "multi-step-deduction",
-    "question": "An engineer has been at 37signals for 9 years and has never taken a sabbatical. How many sabbaticals has she earned, and if she resigns today, how many of them does 37signals actually pay her out for?",
-    "expected_answer": "She has earned **3 sabbaticals** \u2014 one every 3 years (at her 3-year, 6-year, and 9-year marks).\n\nHowever, 37signals only pays out unused sabbatical that was earned within the previous 12 months. So on resignation she'd be paid the monetary equivalent of just **1 sabbatical (6 weeks of pay)** \u2014 the most recent one, earned at year 9.\n\nThe two earlier unused sabbaticals (from years 3 and 6) are forfeited.",
-    "source_title": "Benefits & Perks",
-    "source_url": "https://basecamp.com/handbook/benefits-and-perks"
+    "id": "AQ0003",
+    "category": "multi-part-list",
+    "question": "I've performed online check-in, and wish to now proceed to the check-in gate with my service dog to catch my first-class flight to Berlin. What should I keep in mind?",
+    "evaluation_criteria": [
+      "1. Notes that online check-in is not available for passengers travelling with live animals in the cabin — the passenger should verify or complete their check-in at the airport counter",
+      "2. Must present at check-in: a certificate of training from an accredited service animal organization AND a veterinary health certificate dated within 10 days of travel",
+      "3. Service dog must wear a harness or identifying vest",
+      "4. Service dog must remain at the passenger's feet or on their lap for the duration of the flight; it cannot occupy a seat"
+    ],
+    "sources": [
+      {
+        "id": "7.5",
+        "title": "Service Animals",
+        "url": "data/skyway/customer-service-reference-manual.html#section-7-5"
+      },
+      {
+        "id": "2.1",
+        "title": "Online Check-in",
+        "url": "data/skyway/customer-service-reference-manual.html#section-2-1"
+      }
+    ]
   },
   {
-    "id": "q9",
-    "category": "multi-step-deduction",
-    "question": "An employee joined 37signals 4 years and 7 months ago and has never resigned or been terminated. How many Employee Profit Sharing shares have they accrued by today?",
-    "expected_answer": "**31 shares accrued.**\n\nThe math:\n- Profit-sharing accrual begins on the employee's second anniversary, at a rate of 1 share per month.\n- This employee passed their 2-year anniversary 2 years and 7 months ago.\n- 2 years and 7 months = **31 months of accrual** = 31 shares.\n\n(Shares max out at the 10-year mark, so they're still well below the cap.)",
-    "source_title": "Benefits & Perks",
-    "source_url": "https://basecamp.com/handbook/benefits-and-perks"
+    "id": "AQ0005",
+    "category": "negative-test",
+    "question": "I am a first class passenger, and want to check-in 10000 bags of 32 Kg each. Is that possible? If so, what will that cost me?",
+    "evaluation_criteria": [
+      "1. Notes that 10,000 bags is operationally impractical for standard passenger check-in and is not addressed by the reference manual — the passenger would need to contact SkyWay directly for arrangements at this scale",
+      "2. Does not fabricate a policy that explicitly permits or prohibits 10,000 bags as standard passenger baggage"
+    ],
+    "sources": [
+      {
+        "id": "3.2",
+        "title": "Checked Baggage Allowance",
+        "url": "data/skyway/customer-service-reference-manual.html#section-3-2"
+      },
+      {
+        "id": "3.3",
+        "title": "Excess and Oversize Baggage",
+        "url": "data/skyway/customer-service-reference-manual.html#section-3-3"
+      }
+    ]
   },
   {
-    "id": "q10",
+    "id": "AQ0006",
+    "category": "negative-test",
+    "question": "I want to bring my cat on my SkyWay flight. What is your pet travel policy — can my cat fly in the cabin with me, and how much does it cost?",
+    "evaluation_criteria": [
+      "1. Clearly states the reference manual does not contain a general pet travel policy",
+      "2. Mentions recognized service animals (guide dogs, hearing dogs, psychiatric service dogs) are permitted in the cabin at no charge with appropriate documentation",
+      "3. Mentions emotional support animals are not accepted in the cabin and must travel as cargo through SkyWay Cargo",
+      "4. Does not fabricate a pet travel policy for cats or other non-service animals",
+      "5. Recommends contacting SkyWay Customer Service Centre or SkyWay Cargo for pet travel information"
+    ],
+    "sources": [
+      {
+        "id": "7.5",
+        "title": "Service Animals",
+        "url": "data/skyway/customer-service-reference-manual.html#section-7-5"
+      }
+    ]
+  },
+  {
+    "id": "AQ0004",
+    "category": "quantitative-fact",
+    "question": "I am flying a long-haul flight on an economy light ticket, and I want to check-in an additional bag. How much will that cost me?",
+    "evaluation_criteria": [
+      "1. Economy Light on long-haul (6 hours or more) includes one checked bag (23 kg) in the fare",
+      "2. An additional bag (the second bag) costs EUR 45",
+      "3. Pre-purchasing the additional bag online is approximately 30% cheaper than purchasing at the airport"
+    ],
+    "sources": [
+      {
+        "id": "3.2",
+        "title": "Checked Baggage Allowance",
+        "url": "data/skyway/customer-service-reference-manual.html#section-3-2"
+      }
+    ]
+  },
+  {
+    "id": "AQ0009",
+    "category": "negative-test",
+    "question": "I am a second time mother. So under your guidelines, my current pregnancy would be a multiple pregnancy?",
+    "evaluation_criteria": [
+      "1. Clarifies that 'multiple pregnancy' is not clearly defined in SkyWay's policy",
+      "2. Requests passenger to get in touch with support helpline"
+    ],
+    "sources": [
+      {
+        "id": "7.3",
+        "title": "Pregnant Passengers",
+        "url": "data/skyway/customer-service-reference-manual.html#section-7-3"
+      }
+    ]
+  },
+  {
+    "id": "AQ0007",
     "category": "multi-part-policy",
-    "question": "What are 37signals' summer hours, what date range do they cover, what happens when a holiday falls during this period, and how do newly hired employees become eligible?",
-    "expected_answer": "- **Date range:** May 1 through August 31 every year.\n- **Schedule:** a 4-day work week (32 hours instead of the usual 40).\n- **Holidays during this period:** the employee can take either the holiday off *or* their normal summer day off \u2014 but not both. Any additional days off that week count as vacation.\n- **New-hire eligibility:** a newly hired employee may need to complete a training program designated by their team lead before becoming eligible.",
-    "source_title": "Benefits & Perks",
-    "source_url": "https://basecamp.com/handbook/benefits-and-perks"
+    "question": "I was denied boarding, and put on the next flight, which departs in 1 hour. What are my rights?",
+    "evaluation_criteria": [
+      "1. Entitled to EU261 compensation — the full amount (EUR 250, 400, or 600 depending on flight distance), with no 50% reduction",
+      "2. Being rebooked on the next available flight satisfies the rebooking entitlement",
+      "3. Care and assistance entitlements apply as mentioned in section 5.3. But since the wait is only 1 hour the minimum thresholds for meals and refreshments (2 hours for short-haul, 3 hours for medium-haul, 4 hours for long-haul) are not met. The system may or may not additionally mention whether the 1-hour threshold applies."
+    ],
+    "sources": [
+      {
+        "id": "5.4",
+        "title": "Denied Boarding (Overbooking)",
+        "url": "data/skyway/customer-service-reference-manual.html#section-5-4"
+      },
+      {
+        "id": "5.2",
+        "title": "Compensation for Delays and Cancellations (EU Regulation 261/2004)",
+        "url": "data/skyway/customer-service-reference-manual.html#section-5-2"
+      },
+      {
+        "id": "5.3",
+        "title": "Right to Care and Assistance",
+        "url": "data/skyway/customer-service-reference-manual.html#section-5-3"
+      }
+    ]
+  },
+  {
+    "id": "AQ0008",
+    "category": "conditional-policy",
+    "question": "I am a silver loyalty passenger, and want to check-in an additional bag on an economy light ticket. What should I pay?",
+    "evaluation_criteria": [
+      "1. Silver tier members receive one additional checked bag (23 kg) free on all SkyWay flights, regardless of fare class",
+      "2. The additional bag they wish to check is covered by this Silver benefit — no charge applies",
+      "3. If they need a further additional bag beyond the Silver benefit, the applicable Economy Light excess bag fee applies (EUR 45 for the next bag, EUR 80 for each one after that)"
+    ],
+    "sources": [
+      {
+        "id": "6.3",
+        "title": "Tier Levels",
+        "url": "data/skyway/customer-service-reference-manual.html#section-6-3"
+      },
+      {
+        "id": "3.2",
+        "title": "Checked Baggage Allowance",
+        "url": "data/skyway/customer-service-reference-manual.html#section-3-2"
+      }
+    ]
+  },
+  {
+    "id": "AQ0010",
+    "category": "conditional-policy",
+    "question": "I booked an Economy Light ticket for a flight next week but I've fallen ill and can't travel. Can I get any money back?",
+    "evaluation_criteria": [
+      "1. States Economy Light fare is non-refundable — no cash refund or travel voucher for cancellations",
+      "2. Airport taxes and government-imposed fees are refundable upon request regardless of fare class",
+      "3. Does not fabricate or promise a medical exemption policy not documented in the reference material"
+    ],
+    "sources": [
+      {
+        "id": "4.2",
+        "title": "Voluntary Cancellation by the Passenger",
+        "url": "data/skyway/customer-service-reference-manual.html#section-4-2"
+      },
+      {
+        "id": "4.1",
+        "title": "Voluntary Changes by the Passenger",
+        "url": "data/skyway/customer-service-reference-manual.html#section-4-1"
+      }
+    ]
   }
 ]

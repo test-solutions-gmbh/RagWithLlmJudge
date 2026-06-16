@@ -2,7 +2,7 @@ import json
 import re
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 from src._io import atomic_write_json
 
@@ -54,12 +54,46 @@ def load_benchmark(name: str) -> Dict[str, Any]:
         return json.load(f)
 
 
+def _extract_judge_verdicts(
+    results: Dict[str, Any],
+) -> Tuple[Optional[str], List[Dict[str, Any]]]:
+    """Pull LLM judge verdicts out of a results payload, if any exist.
+
+    Returns (judge_model, verdicts). judge_model is None when the run has
+    no usable judge feedback (no verdicts, or every verdict is None)."""
+    verdicts: List[Dict[str, Any]] = []
+    has_feedback = False
+    for e in results.get("entries", []):
+        judge = e.get("llm_judge")
+        if not isinstance(judge, dict):
+            continue
+        acceptable = judge.get("acceptable_answer")
+        if acceptable is not None:
+            has_feedback = True
+        verdicts.append(
+            {
+                "id": e.get("id", "<no-id>"),
+                "acceptable_answer": acceptable,
+                "reason": judge.get("reason"),
+            }
+        )
+    if not has_feedback:
+        return None, []
+    return results.get("judge_model") or "unknown-judge", verdicts
+
+
 def promote_from_results(
     results_path: Path,
     name: str,
     *,
     force: bool = False,
-) -> Path:
+) -> Tuple[Path, Optional[Path]]:
+    """Freeze a results file as a benchmark.
+
+    If the run already carries LLM judge feedback, that feedback is saved
+    as the benchmark's first judge run. Returns (benchmark_path,
+    judge_run_path); judge_run_path is None when the run had no judge
+    feedback."""
     if not results_path.exists():
         raise BenchmarkError(f"Results file not found: {results_path}")
 
@@ -69,11 +103,21 @@ def promote_from_results(
             f"Benchmark '{name}' already exists at {target}. Pass force=True to overwrite."
         )
 
-    with open(results_path, "r", encoding="utf-8") as f:
-        results = json.load(f)
+    try:
+        with open(results_path, "r", encoding="utf-8") as f:
+            results = json.load(f)
+    except json.JSONDecodeError as exc:
+        raise BenchmarkError(
+            f"Results file {results_path} is not valid JSON: {exc}"
+        ) from exc
+
+    if not isinstance(results, dict):
+        raise BenchmarkError(
+            f"Results file {results_path} must contain a JSON object."
+        )
 
     entries = results.get("entries", [])
-    if not entries:
+    if not isinstance(entries, list) or not entries:
         raise BenchmarkError(f"Results file {results_path} contains no entries.")
 
     missing = [
@@ -90,24 +134,31 @@ def promote_from_results(
 
     frozen_entries = []
     for e in entries:
-        frozen_entries.append(
-            {
-                "id": e["id"],
-                "category": e.get("category"),
-                "question": e["question"],
-                "expected_answer": e["expected_answer"],
-                "source_title": e.get("source_title"),
-                "source_url": e.get("source_url"),
-                "rag_response": e["rag_response"],
-                "retrieved_contexts": e.get("retrieved_contexts", []),
-                "human_eval": {
-                    "acceptable_answer": bool(
-                        e["human_eval"]["acceptable_answer"]
-                    ),
-                    "comment": e["human_eval"].get("comment"),
-                },
-            }
-        )
+        try:
+            frozen_entries.append(
+                {
+                    "id": e["id"],
+                    "category": e.get("category"),
+                    "question": e["question"],
+                    "evaluation_criteria": e["evaluation_criteria"],
+                    "sources": e.get("sources", []),
+                    "rag_response": e["rag_response"],
+                    "retrieved_contexts": e.get("retrieved_contexts", []),
+                    "retrieved_sections": e.get("retrieved_sections", []),
+                    "retrieval_check": e.get("retrieval_check"),
+                    "human_eval": {
+                        "acceptable_answer": bool(
+                            e["human_eval"]["acceptable_answer"]
+                        ),
+                        "comment": e["human_eval"].get("comment"),
+                    },
+                }
+            )
+        except (KeyError, TypeError) as exc:
+            raise BenchmarkError(
+                f"Cannot promote: entry '{e.get('id', '<no-id>')}' in "
+                f"{results_path} is malformed ({exc!r})."
+            ) from exc
 
     payload = {
         "benchmark_id": name,
@@ -118,26 +169,53 @@ def promote_from_results(
     }
 
     atomic_write_json(target, payload)
-    return target
+
+    judge_model, verdicts = _extract_judge_verdicts(results)
+    judge_run_path: Optional[Path] = None
+    if judge_model is not None:
+        try:
+            judge_run_path = save_judge_run(
+                name,
+                judge_model,
+                verdicts,
+                source_run_id=results.get("run_id"),
+            )
+        except OSError as exc:
+            raise BenchmarkError(
+                f"Benchmark '{name}' was created at {target}, but saving its "
+                f"judge run from {results_path} failed: {exc}. "
+                f"Re-run with judge-benchmark --name {name}."
+            ) from exc
+
+    return target, judge_run_path
 
 
 def save_judge_run(
     name: str,
     judge_model: str,
     verdicts: List[Dict[str, Any]],
+    *,
+    source_run_id: Optional[str] = None,
 ) -> Path:
     if not _benchmark_file(name).exists():
         raise BenchmarkError(f"Benchmark '{name}' does not exist.")
 
     timestamp = _now_slug()
-    filename = f"{_sanitise_for_filename(judge_model)}__{timestamp}.json"
-    path = _judge_runs_dir(name) / filename
+    stem = f"{_sanitise_for_filename(judge_model)}__{timestamp}"
+    runs_dir = _judge_runs_dir(name)
+    path = runs_dir / f"{stem}.json"
+    suffix = 1
+    while path.exists():
+        path = runs_dir / f"{stem}-{suffix}.json"
+        suffix += 1
     payload = {
         "benchmark_id": name,
         "judge_model": judge_model,
         "created_at": timestamp,
         "verdicts": verdicts,
     }
+    if source_run_id is not None:
+        payload["source_run_id"] = source_run_id
     atomic_write_json(path, payload)
     return path
 

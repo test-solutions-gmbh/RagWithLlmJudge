@@ -1,0 +1,320 @@
+[
+  {
+    "id": "AQ0011",
+    "category": "multi-step-deduction",
+    "question": "I'm a SkyWay Voyager Gold member, booked on a single ticket from Rome to Frankfurt (1,200 km) connecting to Frankfurt–Tokyo Narita (9,400 km). My Rome–Frankfurt flight departed 3.5 hours late due to a technical fault and I've missed my Frankfurt–Tokyo connection. It's 11 PM and I'm stranded at Frankfurt Airport. What are my options and what am I entitled to?",
+    "evaluation_criteria": [
+      "Identifies that both segments on a single ticket means SkyWay is responsible for the missed connection",
+      "Rebooking: SkyWay must rebook on the next available flight at no extra cost — on SkyWay or, if unavailable within 24 hours, on a partner or competing carrier",
+      "Baggage: checked baggage will be automatically re-tagged and transferred",
+      "Care at Rome: complimentary meals and refreshments, plus two free phone calls or emails.",
+      "Care at Frankfurt: hotel accommodation, transport to and from hotel, meals and refreshments (since an overnight stay is required)",
+      "EU261 compensation: the relevant distance is Rome–Tokyo via Frankfurt (over 3,500 km), entitling EUR 600 if arrival in Tokyo is more than 3 hours late",
+      "Notes the 50% reduction to EUR 300 if SkyWay rebooks on a flight arriving within 4 hours of the original scheduled arrival",
+      "Gold member benefits: lounge access at Frankfurt, complimentary upgrade to next cabin class (subject to availability), dedicated Gold hotline for priority rebooking",
+      "Right to abandon the journey for a full refund plus a return flight to Rome if the delay reaches 5 hours",
+      "Advises the passenger not to rebook or bear costs themselves — SkyWay is fully responsible"
+    ],
+    "sources": [
+      {
+        "id": "4.5",
+        "title": "Connecting Flights and Missed Connections",
+        "url": "data/skyway/customer-service-reference-manual.html#section-4-5"
+      },
+      {
+        "id": "5.2",
+        "title": "Compensation for Delays and Cancellations (EU Regulation 261/2004)",
+        "url": "data/skyway/customer-service-reference-manual.html#section-5-2"
+      },
+      {
+        "id": "5.3",
+        "title": "Right to Care and Assistance",
+        "url": "data/skyway/customer-service-reference-manual.html#section-5-3"
+      },
+      {
+        "id": "6.3",
+        "title": "Tier Levels",
+        "url": "data/skyway/customer-service-reference-manual.html#section-6-3"
+      }
+    ]
+  },
+  {
+    "id": "AQ0012",
+    "category": "comparative-policy",
+    "question": "My flight was just cancelled by SkyWay. A friend on the same flight tells me she was already planning to cancel her booking voluntarily before this happened. What is my friend entitled to?",
+    "evaluation_criteria": [
+      "Distinguishes between the friend having already cancelled voluntarily vs only intending to cancel (asks for or addresses this ambiguity)",
+      "If the friend has not yet cancelled: she has the same airline-initiated cancellation rights as the user (rebooking, refund, EU261 compensation, care)",
+      "If the friend already completed her voluntary cancellation: entitlements depend on fare class — Economy Light gets no refund; Economy Standard gets only a travel voucher if cancelled more than 48 hours before departure; higher fares have varying refund entitlements",
+      "No EU261 compensation applies for voluntary cancellations",
+      "Care and assistance (meals, hotel if overnight) provided for layovers regardless of cancellation cause"
+    ],
+    "sources": [
+      {
+        "id": "4.3",
+        "title": "Cancellation by SkyWay Airlines",
+        "url": "data/skyway/customer-service-reference-manual.html#section-4-3"
+      },
+      {
+        "id": "4.2",
+        "title": "Voluntary Cancellation by the Passenger",
+        "url": "data/skyway/customer-service-reference-manual.html#section-4-2"
+      }
+    ]
+  },
+  {
+    "id": "AQ0013",
+    "category": "quantitative-fact",
+    "question": "I'm flying Economy Standard to Madrid. How many bags can I check, what's the weight limit, and how much does a second bag cost?",
+    "evaluation_criteria": [
+      "States Economy Standard includes one checked bag",
+      "Maximum weight per bag: 23 kg",
+      "Maximum dimensions: 158 cm total (length + width + height)",
+      "Second checked bag costs EUR 45",
+      "Each further bag beyond the second costs EUR 80",
+      "No single bag may exceed 32 kg",
+      "Bags between 23 kg and 32 kg incur a heavy bag surcharge of EUR 50",
+      "Pre-purchasing additional bags online is approximately 30% cheaper than at the airport"
+    ],
+    "sources": [
+      {
+        "id": "3.2",
+        "title": "Checked Baggage Allowance",
+        "url": "data/skyway/customer-service-reference-manual.html#section-3-2"
+      }
+    ]
+  },
+  {
+    "id": "AQ0014",
+    "category": "multi-part-policy",
+    "question": "I'm on a short-haul flight (1,200 km) and we've been waiting at the gate for 4 hours now. The captain says it's a routine technical issue. What am I entitled to?",
+    "evaluation_criteria": [
+      "Correctly classifies 1,200 km as short-haul (under 1,500 km)",
+      "Identifies that compensation applies",
+      "Care and assistance from the 2-hour mark: complimentary meals and refreshments, two free phone calls or emails",
+      "Hotel accommodation and transport if an overnight stay becomes necessary",
+      "EU261 compensation of EUR 250 for short-haul flights with delay exceeding 3 hours at final destination",
+      "Right to abandon the journey for a full refund plus a return flight to origin if the delay reaches 5 hours"
+    ],
+    "sources": [
+      {
+        "id": "5.2",
+        "title": "Compensation for Delays and Cancellations (EU Regulation 261/2004)",
+        "url": "data/skyway/customer-service-reference-manual.html#section-5-2"
+      },
+      {
+        "id": "5.3",
+        "title": "Right to Care and Assistance",
+        "url": "data/skyway/customer-service-reference-manual.html#section-5-3"
+      }
+    ]
+  },
+  {
+    "id": "AQ0015",
+    "category": "comparative-policy",
+    "question": "I booked an Economy Light ticket. Can I choose my seat, and how does seat selection work compared to higher fare classes?",
+    "evaluation_criteria": [
+      "Economy Light: seat selection available for a fee of EUR 8–25 depending on route and seat location; if unpaid, a seat is assigned at check-in",
+      "Economy Standard: free seat selection in rows 15 and above; preferred seats (extra legroom, exit rows) cost EUR 15–45",
+      "Economy Flex: free selection of all economy seats, including preferred seats",
+      "Premium Economy: free selection across all Premium Economy rows",
+      "Business Class and First Class: free selection across all seats and suites",
+      "Notes that all seat assignments are subject to change for operational or safety reasons"
+    ],
+    "sources": [
+      {
+        "id": "2.4",
+        "title": "Seat Selection",
+        "url": "data/skyway/customer-service-reference-manual.html#section-2-4"
+      }
+    ]
+  },
+  {
+    "id": "AQ0016",
+    "category": "multi-part-list",
+    "question": "My flight is tomorrow. When does online check-in open and close, and what can I do during check-in?",
+    "evaluation_criteria": [
+      "Online check-in opens 48 hours before scheduled departure",
+      "Online check-in closes 1 hour before scheduled departure",
+      "Actions during check-in: confirm or change seat assignment (subject to availability and fare rules)",
+      "Actions during check-in: add checked baggage if not included in fare",
+      "Actions during check-in: request a special meal (must be at least 24 hours before departure; requests during check-in cannot be guaranteed)",
+      "Actions during check-in: download or email boarding pass"
+    ],
+    "sources": [
+      {
+        "id": "2.1",
+        "title": "Online Check-in",
+        "url": "data/skyway/customer-service-reference-manual.html#section-2-1"
+      }
+    ]
+  },
+  {
+    "id": "AQ0017",
+    "category": "multi-part-list",
+    "question": "What are the different loyalty tiers at SkyWay and what miles do I need for each?",
+    "evaluation_criteria": [
+      "Lists all four tiers: Blue, Silver, Gold, Platinum",
+      "Blue: base level, no minimum miles, default for all new members",
+      "Silver: 25,000 status miles or 30 eligible flight segments per calendar year",
+      "Gold: 50,000 status miles or 60 segments per calendar year",
+      "Platinum: 100,000 status miles or 120 segments per calendar year",
+      "Tier status evaluated on 1 January each year based on the previous calendar year's activity"
+    ],
+    "sources": [
+      {
+        "id": "6.3",
+        "title": "Tier Levels",
+        "url": "data/skyway/customer-service-reference-manual.html#section-6-3"
+      }
+    ]
+  },
+  {
+    "id": "AQ0018",
+    "category": "debatable-policy",
+    "question": "I collected my suitcase from the carousel three days ago and have just noticed a large crack in the shell. I didn't report it at the airport. Is it too late to file a claim? The policy says 7 days but I'm not sure if that's 7 days from my flight or 7 days from when I picked up the bag.",
+    "evaluation_criteria": [
+      "States the 7-day deadline runs from the date the baggage was received (collected from the carousel), not the flight date",
+      "Confirms the passenger is still within the claim window (3 days < 7 days)",
+      "Advises filing the claim promptly",
+      "Lists required documentation: boarding pass, baggage tag receipt, photographic evidence of damage",
+      "Notes the absence of a PIR (Property Irregularity Report) may complicate the claim since damage was not reported at the airport",
+      "Does not guarantee the claim will succeed"
+    ],
+    "sources": [
+      {
+        "id": "3.6",
+        "title": "Lost, Delayed, and Damaged Baggage",
+        "url": "data/skyway/customer-service-reference-manual.html#section-3-6"
+      }
+    ]
+  },
+  {
+    "id": "AQ0019",
+    "category": "multi-part-policy",
+    "question": "I've checked in online for my SkyWay flight and have a boarding pass, but the gate agent has just announced the flight is overbooked and they're looking for volunteers to give up their seats. If nobody volunteers, could I be involuntarily bumped? What determines who gets denied boarding, and what am I entitled to if it happens to me?",
+    "evaluation_criteria": [
+      "SkyWay first seeks volunteers with compensation (travel vouchers, upgrades on a future flight, or cash); passengers are under no obligation to volunteer",
+      "If insufficient volunteers, SkyWay may involuntarily deny boarding",
+      "Bumping priority order (bumped first to last): passengers who checked in last, passengers on the lowest fare class, passengers without frequent flyer status",
+      "Protected categories never involuntarily denied boarding: passengers with reduced mobility, unaccompanied minors, families with young children",
+      "EU261 compensation for involuntary denied boarding: EUR 250, 400, or 600 depending on flight distance — full amount with no 50% reduction",
+      "Choice of rebooking on the next available flight at no extra cost, or a full refund",
+      "Care and assistance: meals, phone calls, hotel if an overnight wait is required"
+    ],
+    "sources": [
+      {
+        "id": "5.4",
+        "title": "Denied Boarding (Overbooking)",
+        "url": "data/skyway/customer-service-reference-manual.html#section-5-4"
+      },
+      {
+        "id": "5.2",
+        "title": "Compensation for Delays and Cancellations (EU Regulation 261/2004)",
+        "url": "data/skyway/customer-service-reference-manual.html#section-5-2"
+      }
+    ]
+  },
+  {
+    "id": "AQ0020",
+    "category": "conditional-policy",
+    "question": "I missed my outbound flight last Tuesday — I was stuck in traffic and didn't reach the airport in time to check in. I never called SkyWay. I have a return flight on the same booking reference for next Friday. Is my return flight still valid, and what are my options now?",
+    "evaluation_criteria": [
+      "States the return flight has been automatically cancelled due to the no-show on the outbound segment",
+      "Explains the no-show policy: failing to check in or board without prior cancellation results in forfeiture of the entire fare",
+      "States all subsequent segments on the same booking reference are automatically cancelled when a no-show occurs",
+      "No refund, travel voucher, or rebooking is provided for no-shows, regardless of fare class",
+      "States the passenger must purchase a new ticket for the return journey",
+      "Advises that contacting SkyWay before departure to cancel preserves whatever entitlements the fare class provides"
+    ],
+    "sources": [
+      {
+        "id": "4.2",
+        "title": "Voluntary Cancellation by the Passenger",
+        "url": "data/skyway/customer-service-reference-manual.html#section-4-2"
+      }
+    ]
+  },
+  {
+    "id": "AQ0021",
+    "category": "multi-part-policy",
+    "question": "My checked bag didn't arrive when I landed in Barcelona yesterday evening. I went to the SkyWay baggage desk and they opened a PIR report. I've had to buy toiletries and a change of clothes today. What happens next, and can I get reimbursed for my purchases?",
+    "evaluation_criteria": [
+      "SkyWay will make reasonable efforts to locate and deliver the bag; target delivery time for international flights is within 48 hours",
+      "If bag not found within 5 days, a formal claim should be submitted through the SkyWay website or Customer Service Centre",
+      "Bag declared lost if not found within 21 days of the PIR",
+      "Compensation for lost baggage: up to the Montreal Convention limit of 1,288 SDR (approximately EUR 1,600), based on depreciated value of contents (not replacement cost)",
+      "Reimbursement for reasonable essential expenses (toiletries, basic clothing): up to EUR 100 per day for a maximum of 3 days",
+      "All receipts must be kept and submitted for reimbursement",
+      "Formal claim for delayed baggage must be submitted within 21 days of the baggage being made available"
+    ],
+    "sources": [
+      {
+        "id": "3.6",
+        "title": "Lost, Delayed, and Damaged Baggage",
+        "url": "data/skyway/customer-service-reference-manual.html#section-3-6"
+      }
+    ]
+  },
+  {
+    "id": "AQ0022",
+    "category": "comparative-policy",
+    "question": "I have an Economy Standard ticket and I need to change my flight to the next day. I've just realised it's less than 24 hours until departure. How much will this cost, and how does this compare to what an Economy Light passenger would face in the same situation?",
+    "evaluation_criteria": [
+      "Economy Standard within 24 hours of departure: change fee of EUR 100 per passenger per segment, plus any fare difference",
+      "Notes this is higher than the standard Economy Standard change fee of EUR 50, which applies when changing more than 24 hours before departure",
+      "Economy Light within 24 hours of departure: changes are not permitted at all; the fare is forfeited",
+      "Highlights the key difference: Economy Standard preserves a change option up to departure (at a higher cost), while Economy Light closes entirely inside the 24-hour window"
+    ],
+    "sources": [
+      {
+        "id": "4.1",
+        "title": "Voluntary Changes by the Passenger",
+        "url": "data/skyway/customer-service-reference-manual.html#section-4-1"
+      }
+    ]
+  },
+  {
+    "id": "AQ0023",
+    "category": "conditional-policy",
+    "question": "My cabin bag is slightly oversized — it measures 60 cm long instead of the 55 cm maximum. What happens if this is spotted at the gate?",
+    "evaluation_criteria": [
+      "States oversized cabin bags (exceeding 55 × 40 × 23 cm or 8 kg) will be removed at the gate and moved to the cargo hold",
+      "If the passenger has unused checked baggage allowance (e.g., Economy Standard or higher): bag is checked at no extra cost against that allowance",
+      "If the passenger has no remaining checked baggage allowance (e.g., Economy Light): a checked baggage fee will be charged",
+      "Does not fabricate additional penalties beyond what the policy states"
+    ],
+    "sources": [
+      {
+        "id": "3.1",
+        "title": "Carry-on Baggage",
+        "url": "data/skyway/customer-service-reference-manual.html#section-3-1"
+      },
+      {
+        "id": "3.2",
+        "title": "Checked Baggage Allowance",
+        "url": "data/skyway/customer-service-reference-manual.html#section-3-2"
+      }
+    ]
+  },
+  {
+    "id": "AQ0024",
+    "category": "conditional-policy",
+    "question": "I currently hold Gold status with another airline and I'm planning to switch most of my flying to SkyWay. Do I have to build Gold status from scratch, or is there a faster route into SkyWay Voyager Gold?",
+    "evaluation_criteria": [
+      "SkyWay Voyager offers a one-time status match for members holding equivalent status with a competing airline",
+      "Process: submit a status match request through the SkyWay website with proof of current Gold status",
+      "SkyWay grants Gold tier for a 90-day trial period",
+      "During the 90 days, the passenger must earn 12,000 status miles on SkyWay to retain Gold for the full calendar year",
+      "Failure to reach 12,000 miles within 90 days results in reversion to Blue (base) tier — not Silver",
+      "This is a one-time benefit and cannot be used again in future years"
+    ],
+    "sources": [
+      {
+        "id": "6.5",
+        "title": "Status Matching and Challenges",
+        "url": "data/skyway/customer-service-reference-manual.html#section-6-5"
+      }
+    ]
+  }
+]
