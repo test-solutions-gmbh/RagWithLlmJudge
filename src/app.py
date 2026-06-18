@@ -25,7 +25,9 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 RESULTS_ROOT = REPO_ROOT / "data" / "results"
 LOGO_PATH = REPO_ROOT / "assets" / "ts-logo-transparent.png"
 FAVICON_PATH = REPO_ROOT / "assets" / "ts-lean-transparent.png"
-KNOWLEDGE_BASE_HTML = REPO_ROOT / "data" / "skyway" / "customer-service-reference-manual.html"
+KNOWLEDGE_BASE_HTML = (
+    REPO_ROOT / "data" / "skyway" / "customer-service-reference-manual.html"
+)
 
 CI_BLUE_1 = "#5383C6"
 CI_GREEN_1 = "#C5E784"
@@ -266,8 +268,7 @@ def _styled_table_html(headers: list, rows: list) -> str:
     body = "".join(
         "<tr>"
         + "".join(
-            f'<td class="{cls}">{html.escape(str(text))}</td>'
-            for text, cls in row
+            f'<td class="{cls}">{html.escape(str(text))}</td>' for text, cls in row
         )
         + "</tr>"
         for row in rows
@@ -429,7 +430,7 @@ def _render_preview() -> None:
         submitted = st.form_submit_button("Ask", use_container_width=True)
 
     if submitted and question.strip():
-        with st.spinner("Thinking…"):
+        with st.spinner("Processing…"):
             try:
                 out = answer_question(graph, question.strip())
             except Exception as exc:  # surface API errors in the UI
@@ -520,8 +521,7 @@ def _render_question(payload: dict, results_path: Path) -> None:
             miss = ", ".join(f"{m['id']} {m['title']}" for m in check["missing"])
             detail = f"Missing required source(s): {miss}"
         st.markdown(
-            f'<p style="font-size:1.2rem;margin-top:0.5rem">'
-            f"{html.escape(detail)}</p>",
+            f'<p style="font-size:1.2rem;margin-top:0.5rem">{html.escape(detail)}</p>',
             unsafe_allow_html=True,
         )
 
