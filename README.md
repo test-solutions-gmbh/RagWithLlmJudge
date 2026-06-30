@@ -12,6 +12,7 @@ A live-demo harness that accompanies the LLM Judge Benchmarking talk. The system
 ## Source code for past conference demos
 
 I have used this repository as the source for some of my demos in conferences. Here are tagged commits that correspond to these demos:
+- EuroSTAR 2026: https://github.com/test-solutions-gmbh/RagWithLlmJudge/commit/45297f4e8588029e55fb8ffc5cefd78ff1984315
 - German Testing Day 2026: https://github.com/test-solutions-gmbh/RagWithLlmJudge/commit/c8535e627a66eb99d607077c9f7ab4d673752c19
 
 ## Knowledge base
